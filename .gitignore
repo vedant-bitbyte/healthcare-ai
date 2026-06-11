@@ -1,0 +1,16 @@
+.idea/
+venv/
+__pycache__/
+*.pyc
+
+.env
+
+vector_store/
+
+*.db
+
+.ipynb_checkpoints/
+
+.streamlit/
+
+data/processed/
