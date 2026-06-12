@@ -13,7 +13,7 @@ if TYPE_CHECKING:
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_MODEL_NAME = "all-MiniLM-L6-v2"
+DEFAULT_MODEL_NAME = "BAAI/bge-small-en-v1.5"
 
 
 class EmbeddingModelError(Exception):

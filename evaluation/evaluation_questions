@@ -1,0 +1,31 @@
+id,category,question
+1,workforce,Which states have the fewest specialists?
+2,workforce,Which states have the lowest number of doctors?
+3,workforce,Which states require healthcare workforce investment?
+4,workforce,What workforce shortages are mentioned in healthcare reports?
+5,workforce,How can India improve healthcare workforce availability?
+6,maternal_health,What are the major maternal health challenges in India?
+7,maternal_health,What does NFHS-5 report about maternal health?
+8,maternal_health,What factors contribute to maternal mortality?
+9,maternal_health,What improvements have been made in maternal healthcare?
+10,maternal_health,How can maternal mortality be reduced?
+11,disease_burden,What are the leading causes of disease burden in India?
+12,disease_burden,What does DALY mean in the disease burden report?
+13,disease_burden,How has disease burden changed from 1990 to 2016?
+14,disease_burden,Which diseases contribute most to India's health loss?
+15,disease_burden,How do disease burdens vary across states?
+16,policy,What are the objectives of National Health Policy 2017?
+17,policy,What health expenditure targets are proposed in National Health Policy 2017?
+18,policy,What is Ayushman Bharat?
+19,policy,How does Ayushman Bharat improve healthcare access?
+20,policy,What policy measures are recommended to strengthen healthcare infrastructure?
+21,infrastructure,What are the major healthcare infrastructure challenges in India?
+22,infrastructure,How can healthcare infrastructure be improved in rural areas?
+23,infrastructure,What challenges exist in tribal healthcare infrastructure?
+24,infrastructure,What role does PM-ABHIM play in infrastructure development?
+25,infrastructure,What healthcare facilities have expanded in recent years?
+26,budget,How should health budgets be allocated according to disease burden?
+27,budget,Why is healthcare spending considered an investment in human capital?
+28,budget,How can states improve health budget utilization?
+29,budget,What factors should influence state health spending?
+30,budget,What recommendations exist for health financing in India?
