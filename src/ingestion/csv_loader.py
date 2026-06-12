@@ -1,4 +1,4 @@
-"""Load healthcare CSV data and convert rows into natural-language chunk records."""
+"""Load healthcare CSV data and convert rows into structured chunk records."""
 
 from __future__ import annotations
 
@@ -19,18 +19,39 @@ DEFAULT_SOURCE_NAME = "rhs_2020.csv"
 
 STATE_COLUMN = "State/UT"
 
-METRIC_COLUMNS: list[tuple[str, str]] = [
+CSV_COLUMNS: list[str] = [
+    "SubCenters",
+    "PHCs",
+    "CHCs",
+    "ANM/Health_Worker_Female",
+    "Doctors",
+    "Specialists",
+    "Radiographers",
+    "Pharmacists",
+    "LabTechnicians",
+    "NursingStaff",
+]
+
+INFRASTRUCTURE_FIELDS: list[tuple[str, str]] = [
     ("SubCenters", "SubCenters"),
     ("PHCs", "PHCs"),
     ("CHCs", "CHCs"),
-    ("ANM/Health_Worker_Female", "ANM/health workers"),
-    ("Doctors", "doctors"),
-    ("Specialists", "specialists"),
-    ("Radiographers", "radiographers"),
-    ("Pharmacists", "pharmacists"),
-    ("LabTechnicians", "lab technicians"),
-    ("NursingStaff", "nursing staff"),
 ]
+
+WORKFORCE_FIELDS: list[tuple[str, str]] = [
+    ("Doctors", "Doctors"),
+    ("Specialists", "Specialists"),
+    ("Pharmacists", "Pharmacists"),
+    ("LabTechnicians", "Lab Technicians"),
+    ("NursingStaff", "Nursing Staff"),
+]
+
+PURPOSE_TEXT = (
+    "Purpose:\n"
+    "This information can be used for healthcare workforce planning,\n"
+    "resource allocation, specialist shortage identification,\n"
+    "infrastructure development and budget recommendations."
+)
 
 DEFAULT_LOG_FORMAT = "%(asctime)s | %(levelname)-8s | %(name)s | %(message)s"
 DEFAULT_LOG_DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
@@ -74,51 +95,58 @@ def _parse_numeric_value(value: Any) -> int | None:
         return None
 
 
-def _format_metric_phrase(label: str, value: int) -> str:
-    """Format a single metric as a natural-language phrase fragment."""
-    return f"{value} {label}"
-
-
-def _join_phrases(phrases: list[str]) -> str:
-    """Join phrase fragments using commas and a final 'and'."""
-    if not phrases:
-        return ""
-    if len(phrases) == 1:
-        return phrases[0]
-    return ", ".join(phrases[:-1]) + " and " + phrases[-1]
+def _format_metric_line(label: str, value: int | None) -> str:
+    """Format a single metric as a bullet line for structured profiles."""
+    display_value = str(value) if value is not None else "Not available"
+    return f"- {label}: {display_value}"
 
 
 def row_to_statement(row: pd.Series) -> str | None:
-    """Convert one CSV row into a natural-language healthcare statement.
-
-    Example::
-
-        "Bihar has 9112 SubCenters, 1702 PHCs, 57 CHCs, 15656 ANM/health workers,
-        1745 doctors, 124 specialists, 3 radiographers, 492 pharmacists,
-        438 lab technicians and 1346 nursing staff."
+    """Convert one CSV row into a retrieval-optimized healthcare profile.
 
     Args:
         row: A pandas Series representing one state/UT record.
 
     Returns:
-        Natural-language statement, or ``None`` if the row has no usable data.
+        Structured healthcare profile text, or ``None`` if the row has no usable data.
     """
     state = str(row.get(STATE_COLUMN, "")).strip()
     if not state:
         logger.warning("Skipping row with missing state/UT name")
         return None
 
-    phrases: list[str] = []
-    for column, label in METRIC_COLUMNS:
-        value = _parse_numeric_value(row.get(column))
-        if value is not None:
-            phrases.append(_format_metric_phrase(label, value))
+    infrastructure_values = {
+        column: _parse_numeric_value(row.get(column))
+        for column, _ in INFRASTRUCTURE_FIELDS
+    }
+    workforce_values = {
+        column: _parse_numeric_value(row.get(column))
+        for column, _ in WORKFORCE_FIELDS
+    }
 
-    if not phrases:
+    if not any(value is not None for value in infrastructure_values.values()) and not any(
+        value is not None for value in workforce_values.values()
+    ):
         logger.warning("Skipping row for '%s': no valid metric values", state)
         return None
 
-    return f"{state} has {_join_phrases(phrases)}."
+    infrastructure_lines = [
+        _format_metric_line(label, infrastructure_values[column])
+        for column, label in INFRASTRUCTURE_FIELDS
+    ]
+    workforce_lines = [
+        _format_metric_line(label, workforce_values[column])
+        for column, label in WORKFORCE_FIELDS
+    ]
+
+    return (
+        f"Healthcare workforce profile for {state}\n\n"
+        f"Infrastructure:\n"
+        f"{chr(10).join(infrastructure_lines)}\n\n"
+        f"Workforce:\n"
+        f"{chr(10).join(workforce_lines)}\n\n"
+        f"{PURPOSE_TEXT}"
+    )
 
 
 def load_rhs_csv(csv_path: str | Path) -> pd.DataFrame:
@@ -150,7 +178,7 @@ def load_rhs_csv(csv_path: str | Path) -> pd.DataFrame:
         logger.exception("Failed to read CSV: %s", path)
         raise CSVLoadError(f"Could not read CSV '{path.name}': {exc}") from exc
 
-    required_columns = [STATE_COLUMN, *[column for column, _ in METRIC_COLUMNS]]
+    required_columns = [STATE_COLUMN, *CSV_COLUMNS]
     missing_columns = [column for column in required_columns if column not in dataframe.columns]
     if missing_columns:
         raise CSVLoadError(f"Missing required columns: {', '.join(missing_columns)}")
@@ -163,15 +191,7 @@ def build_chunk_records(
     dataframe: pd.DataFrame,
     source: str = DEFAULT_SOURCE_NAME,
 ) -> list[dict[str, Any]]:
-    """Convert CSV rows into ingestion-compatible chunk records.
-
-    Args:
-        dataframe: RHS healthcare DataFrame.
-        source: Source filename stored in each chunk record.
-
-    Returns:
-        List of chunk dictionaries with ``chunk_id``, ``source``, and ``text``.
-    """
+    """Convert CSV rows into retrieval-optimized chunk records."""
     records: list[dict[str, Any]] = []
     chunk_id = 1
 
@@ -224,16 +244,7 @@ def run_csv_loader(
     output_path: str | Path = DEFAULT_OUTPUT_PATH,
     source: str = DEFAULT_SOURCE_NAME,
 ) -> list[dict[str, Any]]:
-    """Load RHS CSV data and save natural-language chunks as JSON.
-
-    Args:
-        csv_path: Path to the input CSV file.
-        output_path: Path for the output JSON chunk file.
-        source: Source label stored in each chunk record.
-
-    Returns:
-        List of generated chunk records.
-    """
+    """Load RHS CSV data and save structured healthcare profile chunks as JSON."""
     dataframe = load_rhs_csv(csv_path)
     records = build_chunk_records(dataframe, source=source)
     save_chunk_records(records, output_path)
@@ -243,7 +254,7 @@ def run_csv_loader(
 def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
-        description="Convert RHS CSV rows into natural-language JSON chunks.",
+        description="Convert RHS CSV rows into structured healthcare profile JSON chunks.",
     )
     parser.add_argument(
         "--csv",

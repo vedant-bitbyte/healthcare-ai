@@ -11,7 +11,7 @@ from ..embeddings.vector_store import VectorStore
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_TOP_K = 5
+DEFAULT_TOP_K = 15
 
 
 class RetrievalError(Exception):
