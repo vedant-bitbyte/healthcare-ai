@@ -12,8 +12,9 @@ rag = RAGPipeline()
 questions = [
     "Which states have the fewest specialists?",
     "Which states have doctor shortages?",
-    "Which states require healthcare workforce investment?",
-    "What are the healthcare infrastructure challenges in India?",
+    "WWhat is India's maternal mortality situation?",
+    "What diseases contribute most to India's disease burden?",
+    "What are the goals of National Health Policy 2017?",
 ]
 
 for question in questions:

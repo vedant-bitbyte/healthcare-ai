@@ -8,6 +8,7 @@ from typing import Any
 
 from ..embeddings.embedding_model import EmbeddingModelError, embed_text
 from ..embeddings.vector_store import VectorStore
+from .query_router import QueryCategory, QueryRouter
 
 logger = logging.getLogger(__name__)
 
@@ -39,6 +40,7 @@ class Retriever:
                 created when none is provided.
         """
         self._vector_store = vector_store or VectorStore()
+        self._query_router = QueryRouter()
 
     @property
     def vector_store(self) -> VectorStore:
@@ -67,6 +69,9 @@ class Retriever:
 
         logger.info("Retrieving top %d result(s) for query", top_k)
 
+        categories, preferred_sources = self._resolve_routing(query)
+        self._log_routing_decision(categories, preferred_sources)
+
         try:
             query_embedding = embed_text(query)
         except EmbeddingModelError as exc:
@@ -79,14 +84,28 @@ class Retriever:
             logger.warning("Vector store is empty; no results to retrieve")
             return []
 
-        n_results = min(top_k, document_count)
+        where_filter, searchable_count = self._build_source_filter(
+            collection,
+            preferred_sources,
+            document_count,
+        )
+
+        if searchable_count == 0:
+            logger.warning("No searchable chunks available after routing filters")
+            return []
+
+        n_results = min(top_k, searchable_count)
 
         try:
-            results: dict[str, Any] = collection.query(
-                query_embeddings=[query_embedding],
-                n_results=n_results,
-                include=["documents", "metadatas", "distances"],
-            )
+            query_kwargs: dict[str, Any] = {
+                "query_embeddings": [query_embedding],
+                "n_results": n_results,
+                "include": ["documents", "metadatas", "distances"],
+            }
+            if where_filter is not None:
+                query_kwargs["where"] = where_filter
+
+            results: dict[str, Any] = collection.query(**query_kwargs)
         except Exception as exc:
             logger.exception("ChromaDB query failed")
             raise RetrievalError(f"Vector search failed: {exc}") from exc
@@ -95,6 +114,67 @@ class Retriever:
 
         logger.info("Retrieved %d result(s)", len(parsed))
         return parsed
+
+    def _resolve_routing(self, query: str) -> tuple[list[QueryCategory], list[str]]:
+        """Detect categories and preferred sources for a query."""
+        categories = self._query_router.detect_categories(query)
+        preferred_sources = self._preferred_sources_from_categories(categories)
+        return categories, preferred_sources
+
+    def _preferred_sources_from_categories(
+        self,
+        categories: list[QueryCategory],
+    ) -> list[str]:
+        """Build a de-duplicated preferred source list from detected categories."""
+        preferred_sources: list[str] = []
+        seen: set[str] = set()
+
+        for category in categories:
+            for source in self._query_router.get_sources_for_category(category):
+                if source not in seen:
+                    seen.add(source)
+                    preferred_sources.append(source)
+
+        return preferred_sources
+
+    def _log_routing_decision(
+        self,
+        categories: list[QueryCategory],
+        preferred_sources: list[str],
+    ) -> None:
+        """Log routing metadata before vector search."""
+        category_labels = ", ".join(category.value for category in categories) or "none"
+        source_labels = ", ".join(preferred_sources) or "none"
+
+        logger.info("Query categories: %s", category_labels)
+        logger.info("Preferred sources: %s", source_labels)
+
+    def _build_source_filter(
+        self,
+        collection: Any,
+        preferred_sources: list[str],
+        document_count: int,
+    ) -> tuple[dict[str, Any] | None, int]:
+        """Build a ChromaDB metadata filter and count searchable chunks."""
+        if not preferred_sources:
+            logger.info("Filtered chunks available: %d", document_count)
+            return None, document_count
+
+        where_filter = {"source": {"$in": preferred_sources}}
+        filtered_count = self._count_filtered_chunks(collection, where_filter)
+        logger.info("Filtered chunks available: %d", filtered_count)
+        return where_filter, filtered_count
+
+    @staticmethod
+    def _count_filtered_chunks(collection: Any, where_filter: dict[str, Any]) -> int:
+        """Count chunks that match a ChromaDB metadata filter."""
+        try:
+            filtered = collection.get(where=where_filter, include=[])
+        except Exception as exc:
+            logger.exception("Failed to count filtered chunks")
+            raise RetrievalError(f"Could not count filtered chunks: {exc}") from exc
+
+        return len(filtered.get("ids", []))
 
     @staticmethod
     def _parse_query_results(results: dict[str, Any]) -> list[RetrievalResult]:
