@@ -114,11 +114,19 @@ def _extract_sources(
 
 def run_rag_pipeline(
     question: str,
+    model: str = DEFAULT_MODEL,
+    top_k: int = DEFAULT_RAG_TOP_K,
 ) -> dict[str, Any]:
-    """
-    Convenience wrapper.
-    """
+    """Run the RAG pipeline for a single question.
 
-    pipeline = RAGPipeline()
+    Args:
+        question: User healthcare question.
+        model: Ollama model name for answer generation.
+        top_k: Number of chunks to retrieve.
 
+    Returns:
+        RAG result with ``question``, ``answer``, ``sources``, and
+        ``retrieved_chunks``.
+    """
+    pipeline = RAGPipeline(model=model, top_k=top_k)
     return pipeline.run(question)
