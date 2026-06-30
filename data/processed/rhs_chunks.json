@@ -1,0 +1,187 @@
+[
+  {
+    "chunk_id": 1,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Andhra Pradesh\n\nInfrastructure:\n- SubCenters: 7437\n- PHCs: 1142\n- CHCs: 141\n\nWorkforce:\n- Doctors: 1798\n- Specialists: 315\n- Pharmacists: 1039\n- Lab Technicians: 913\n- Nursing Staff: 3088\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 2,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Arunachal Pradesh\n\nInfrastructure:\n- SubCenters: 356\n- PHCs: 119\n- CHCs: 60\n\nWorkforce:\n- Doctors: 194\n- Specialists: 14\n- Pharmacists: 108\n- Lab Technicians: 120\n- Nursing Staff: 679\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 3,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Assam\n\nInfrastructure:\n- SubCenters: 4659\n- PHCs: 946\n- CHCs: 190\n\nWorkforce:\n- Doctors: 1424\n- Specialists: 188\n- Pharmacists: 1384\n- Lab Technicians: 1279\n- Nursing Staff: 3575\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 4,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Bihar\n\nInfrastructure:\n- SubCenters: 9112\n- PHCs: 1702\n- CHCs: 57\n\nWorkforce:\n- Doctors: 1745\n- Specialists: 124\n- Pharmacists: 492\n- Lab Technicians: 438\n- Nursing Staff: 1346\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 5,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Chhattisgarh\n\nInfrastructure:\n- SubCenters: 5205\n- PHCs: 792\n- CHCs: 170\n\nWorkforce:\n- Doctors: 388\n- Specialists: 62\n- Pharmacists: 946\n- Lab Technicians: 811\n- Nursing Staff: 2718\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 6,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Goa\n\nInfrastructure:\n- SubCenters: 218\n- PHCs: 55\n- CHCs: 6\n\nWorkforce:\n- Doctors: 75\n- Specialists: 14\n- Pharmacists: 57\n- Lab Technicians: 44\n- Nursing Staff: 273\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 7,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Gujarat\n\nInfrastructure:\n- SubCenters: 9162\n- PHCs: 1477\n- CHCs: 348\n\nWorkforce:\n- Doctors: 1490\n- Specialists: 13\n- Pharmacists: 1538\n- Lab Technicians: 1478\n- Nursing Staff: 2969\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 8,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Haryana\n\nInfrastructure:\n- SubCenters: 2617\n- PHCs: 385\n- CHCs: 118\n\nWorkforce:\n- Doctors: 491\n- Specialists: 27\n- Pharmacists: 405\n- Lab Technicians: 400\n- Nursing Staff: 2193\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 9,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Himachal Pradesh\n\nInfrastructure:\n- SubCenters: 2092\n- PHCs: 564\n- CHCs: 85\n\nWorkforce:\n- Doctors: 471\n- Specialists: 21\n- Pharmacists: 511\n- Lab Technicians: 48\n- Nursing Staff: 242\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 10,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Jharkhand\n\nInfrastructure:\n- SubCenters: 3848\n- PHCs: 291\n- CHCs: 171\n\nWorkforce:\n- Doctors: 222\n- Specialists: 179\n- Pharmacists: 228\n- Lab Technicians: 364\n- Nursing Staff: 888\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 11,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Karnataka\n\nInfrastructure:\n- SubCenters: 9188\n- PHCs: 2176\n- CHCs: 189\n\nWorkforce:\n- Doctors: 2071\n- Specialists: 252\n- Pharmacists: 1749\n- Lab Technicians: 1725\n- Nursing Staff: 4741\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 12,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Kerala\n\nInfrastructure:\n- SubCenters: 5410\n- PHCs: 784\n- CHCs: 211\n\nWorkforce:\n- Doctors: 1028\n- Specialists: 173\n- Pharmacists: 774\n- Lab Technicians: 565\n- Nursing Staff: 1760\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 13,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Madhya Pradesh\n\nInfrastructure:\n- SubCenters: 10226\n- PHCs: 1199\n- CHCs: 309\n\nWorkforce:\n- Doctors: 1065\n- Specialists: 46\n- Pharmacists: 1323\n- Lab Technicians: 823\n- Nursing Staff: 2853\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 14,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Maharashtra\n\nInfrastructure:\n- SubCenters: 10647\n- PHCs: 1829\n- CHCs: 278\n\nWorkforce:\n- Doctors: 2848\n- Specialists: 399\n- Pharmacists: 1958\n- Lab Technicians: 1574\n- Nursing Staff: 3165\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 15,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Manipur\n\nInfrastructure:\n- SubCenters: 418\n- PHCs: 85\n- CHCs: 17\n\nWorkforce:\n- Doctors: 311\n- Specialists: 4\n- Pharmacists: 152\n- Lab Technicians: 112\n- Nursing Staff: 336\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 16,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Meghalaya\n\nInfrastructure:\n- SubCenters: 440\n- PHCs: 119\n- CHCs: 28\n\nWorkforce:\n- Doctors: 190\n- Specialists: 4\n- Pharmacists: 168\n- Lab Technicians: 192\n- Nursing Staff: 754\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 17,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Mizoram\n\nInfrastructure:\n- SubCenters: 311\n- PHCs: 57\n- CHCs: 9\n\nWorkforce:\n- Doctors: 58\n- Specialists: 0\n- Pharmacists: 42\n- Lab Technicians: 74\n- Nursing Staff: 245\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 18,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Nagaland\n\nInfrastructure:\n- SubCenters: 395\n- PHCs: 130\n- CHCs: 21\n\nWorkforce:\n- Doctors: 120\n- Specialists: 9\n- Pharmacists: 132\n- Lab Technicians: 143\n- Nursing Staff: 316\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 19,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Odisha\n\nInfrastructure:\n- SubCenters: 6688\n- PHCs: 1288\n- CHCs: 377\n\nWorkforce:\n- Doctors: 827\n- Specialists: 313\n- Pharmacists: 1694\n- Lab Technicians: 711\n- Nursing Staff: 2504\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 20,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Punjab\n\nInfrastructure:\n- SubCenters: 2950\n- PHCs: 427\n- CHCs: 143\n\nWorkforce:\n- Doctors: 391\n- Specialists: 139\n- Pharmacists: 629\n- Lab Technicians: 528\n- Nursing Staff: 1732\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 21,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Rajasthan\n\nInfrastructure:\n- SubCenters: 13480\n- PHCs: 2094\n- CHCs: 548\n\nWorkforce:\n- Doctors: 1845\n- Specialists: 438\n- Pharmacists: 1110\n- Lab Technicians: 1979\n- Nursing Staff: 8174\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 22,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Sikkim\n\nInfrastructure:\n- SubCenters: 147\n- PHCs: 24\n- CHCs: 2\n\nWorkforce:\n- Doctors: 34\n- Specialists: 2\n- Pharmacists: 13\n- Lab Technicians: 37\n- Nursing Staff: 92\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 23,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Tamil Nadu\n\nInfrastructure:\n- SubCenters: 8713\n- PHCs: 1420\n- CHCs: 385\n\nWorkforce:\n- Doctors: 2708\n- Specialists: 228\n- Pharmacists: 1585\n- Lab Technicians: 1165\n- Nursing Staff: 7072\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 24,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Telangana\n\nInfrastructure:\n- SubCenters: 4744\n- PHCs: 636\n- CHCs: 85\n\nWorkforce:\n- Doctors: 1213\n- Specialists: 258\n- Pharmacists: 442\n- Lab Technicians: 647\n- Nursing Staff: 2076\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 25,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Tripura\n\nInfrastructure:\n- SubCenters: 965\n- PHCs: 107\n- CHCs: 22\n\nWorkforce:\n- Doctors: 222\n- Specialists: 1\n- Pharmacists: 171\n- Lab Technicians: 146\n- Nursing Staff: 746\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 26,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Uttarakhand\n\nInfrastructure:\n- SubCenters: 1839\n- PHCs: 257\n- CHCs: 56\n\nWorkforce:\n- Doctors: 346\n- Specialists: 32\n- Pharmacists: 317\n- Lab Technicians: 61\n- Nursing Staff: 243\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 27,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Uttar Pradesh\n\nInfrastructure:\n- SubCenters: 20778\n- PHCs: 2880\n- CHCs: 711\n\nWorkforce:\n- Doctors: 2759\n- Specialists: 816\n- Pharmacists: 4181\n- Lab Technicians: 1812\n- Nursing Staff: 7408\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 28,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for West Bengal\n\nInfrastructure:\n- SubCenters: 10357\n- PHCs: 913\n- CHCs: 348\n\nWorkforce:\n- Doctors: 1098\n- Specialists: 641\n- Pharmacists: 1460\n- Lab Technicians: 717\n- Nursing Staff: 7778\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 29,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for A& N Islands\n\nInfrastructure:\n- SubCenters: 124\n- PHCs: 22\n- CHCs: 4\n\nWorkforce:\n- Doctors: 48\n- Specialists: 1\n- Pharmacists: 29\n- Lab Technicians: 25\n- Nursing Staff: 148\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 30,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Chandigarh\n\nInfrastructure:\n- SubCenters: 0\n- PHCs: 0\n- CHCs: 0\n\nWorkforce:\n- Doctors: Not available\n- Specialists: Not available\n- Pharmacists: Not available\n- Lab Technicians: Not available\n- Nursing Staff: Not available\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 31,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Dadra & Nagar Haveli\n\nInfrastructure:\n- SubCenters: 94\n- PHCs: 10\n- CHCs: 4\n\nWorkforce:\n- Doctors: 13\n- Specialists: 1\n- Pharmacists: 18\n- Lab Technicians: 23\n- Nursing Staff: 77\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 32,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Delhi\n\nInfrastructure:\n- SubCenters: 12\n- PHCs: 5\n- CHCs: 0\n\nWorkforce:\n- Doctors: 18\n- Specialists: Not available\n- Pharmacists: 4\n- Lab Technicians: 1\n- Nursing Staff: 6\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 33,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Jammu & Kashmir\n\nInfrastructure:\n- SubCenters: 2470\n- PHCs: 923\n- CHCs: 77\n\nWorkforce:\n- Doctors: 940\n- Specialists: 230\n- Pharmacists: 1058\n- Lab Technicians: 882\n- Nursing Staff: 1385\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 34,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Ladakh\n\nInfrastructure:\n- SubCenters: 238\n- PHCs: 32\n- CHCs: 7\n\nWorkforce:\n- Doctors: 10\n- Specialists: 5\n- Pharmacists: 22\n- Lab Technicians: 20\n- Nursing Staff: 37\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 35,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Lakshadweep\n\nInfrastructure:\n- SubCenters: 11\n- PHCs: 4\n- CHCs: 3\n\nWorkforce:\n- Doctors: 10\n- Specialists: 8\n- Pharmacists: 20\n- Lab Technicians: 18\n- Nursing Staff: 63\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 36,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for Puducherry\n\nInfrastructure:\n- SubCenters: 53\n- PHCs: 24\n- CHCs: 3\n\nWorkforce:\n- Doctors: 45\n- Specialists: 0\n- Pharmacists: 33\n- Lab Technicians: 28\n- Nursing Staff: 165\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  },
+  {
+    "chunk_id": 37,
+    "source": "rhs_2020.csv",
+    "text": "Healthcare workforce profile for All India Total\n\nInfrastructure:\n- SubCenters: 155404\n- PHCs: 24918\n- CHCs: 5183\n\nWorkforce:\n- Doctors: 28516\n- Specialists: 4957\n- Pharmacists: 25792\n- Lab Technicians: 19903\n- Nursing Staff: 71847\n\nPurpose:\nThis information can be used for healthcare workforce planning,\nresource allocation, specialist shortage identification,\ninfrastructure development and budget recommendations."
+  }
+]

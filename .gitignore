@@ -5,12 +5,6 @@ __pycache__/
 
 .env
 
-vector_store/
-
-*.db
-
 .ipynb_checkpoints/
 
 .streamlit/
-
-data/processed/
