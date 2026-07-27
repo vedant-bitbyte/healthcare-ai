@@ -6,6 +6,7 @@ chromadb
 sentence-transformers
 pypdf
 pandas
+matplotlib
 
 python-dotenv
 
