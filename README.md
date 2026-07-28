@@ -1,4 +1,4 @@
-# 🏥 Healthcare AI SLM
+# Healthcare AI SLM
 
 AI-powered Healthcare Budget Recommendation System for Indian Healthcare Administration.
 
@@ -6,7 +6,7 @@ A research project focused on developing a domain-specific Small Language Model 
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 <p align="center">
   <img src="assets/diagram/Main_Architecture.svg" alt="Main Architecture" width="1121">
@@ -14,7 +14,7 @@ A research project focused on developing a domain-specific Small Language Model 
 
 ---
 
-## 🧠 Fine-Tuning Architecture
+## Fine-Tuning Architecture
 
 <p align="center">
   <img src="assets/diagram/Fine-Tuning_Architecture.svg" alt="Fine-Tuning Architecture" width="191">
@@ -22,18 +22,18 @@ A research project focused on developing a domain-specific Small Language Model 
 
 ---
 
-## ✨ Features
+## Features
 
-- 📄 Healthcare document ingestion
-- 🤖 Fine-tuned Healthcare SLM
-- 🔍 RAG-based document retrieval
-- 💬 AI Healthcare Chatbot
-- 💰 Budget recommendation engine
-- 📊 Model evaluation
+- Healthcare document ingestion
+- Fine-tuned Healthcare SLM
+- RAG-based document retrieval
+- AI Healthcare Chatbot
+- Budget recommendation engine
+- Model evaluation
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠Tech Stack
 
 - Python
 - Streamlit
@@ -44,7 +44,7 @@ A research project focused on developing a domain-specific Small Language Model 
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ```bash
   git clone https://github.com/vedant-bitbyte/healthcare-ai.git
@@ -58,12 +58,12 @@ A research project focused on developing a domain-specific Small Language Model 
 
 ---
 
-## 📌 Project Goal
+## Project Goal
 
 To build a domain-specific Healthcare Small Language Model capable of providing accurate healthcare insights and budget recommendations for Indian healthcare administration.
 
 ---
 
-## 📄 License
+## License
 
 This project is intended for academic and research purposes.
