@@ -9,7 +9,7 @@ A research project focused on developing a domain-specific Small Language Model 
 ## 🏗️ System Architecture
 
 <p align="center">
-  <img src="assets/diagram/Main_Architecture.png" alt="Main Architecture" width="1121">
+  <img src="assets/diagram/Main_Architecture.svg" alt="Main Architecture" width="1121">
 </p>
 
 ---
@@ -17,7 +17,7 @@ A research project focused on developing a domain-specific Small Language Model 
 ## 🧠 Fine-Tuning Architecture
 
 <p align="center">
-  <img src="assets/diagram/Fine-Tuning_Architecture.png" alt="Fine-Tuning Architecture" width="191">
+  <img src="assets/diagram/Fine-Tuning_Architecture.svg" alt="Fine-Tuning Architecture" width="191">
 </p>
 
 ---
