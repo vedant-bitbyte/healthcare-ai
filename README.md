@@ -33,7 +33,7 @@ A research project focused on developing a domain-specific Small Language Model 
 
 ---
 
-## 🛠Tech Stack
+## Tech Stack
 
 - Python
 - Streamlit
