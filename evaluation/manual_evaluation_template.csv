@@ -9,37 +9,72 @@ Supporting Evidence:
 - Lakshadweep: Specialists: 8
 - Mizoram: Specialists: 0
 - Puducherry: Specialists: 0
-Question ID,Phi3 Faithfulness,Phi3 Completeness,Phi3 Conciseness,Phi3 Readability,Phi3 Overall Score,Gemma3 Faithfulness,Gemma3 Completeness,Gemma3 Conciseness,Gemma3 Readability,Gemma3 Overall Score,Winner,Comments
-1,3,2,3,3,3,5,5,5,5,5,Gemma3,"Gemma3 gives clearer and more complete evidence; Phi3 is cautious but incomplete."
-2,3,3,4,4,4,5,5,5,5,5,Gemma3,"Gemma3 identifies the relevant information more accurately and directly."
-3,4,4,5,4,4,4,4,3,4,4,Phi3,"Both are comparable, but Phi3 is more concise and appropriately avoids overclaiming."
-4,5,5,5,5,5,5,4,5,5,5,Phi3,"Phi3 is slightly more complete while maintaining excellent clarity and faithfulness."
-5,4,5,4,5,5,3,3,4,4,4,Phi3,"Phi3 provides better context and a more useful interpretation of the available information."
-6,4,5,4,5,5,5,4,5,5,5,Phi3,"Both are strong, but Phi3 provides broader coverage of the important points."
-7,5,4,4,4,4,4,4,3,4,4,Phi3,"Phi3 is more cautious with limited evidence and avoids unsupported conclusions."
-8,4,4,5,5,5,4,4,3,4,4,Phi3,"Phi3 answers the question more directly and concisely while remaining readable."
-9,4,4,4,5,4,5,2,5,5,4,Phi3,"Phi3 gives more useful contextual information, whereas Gemma3 lacks completeness."
-10,5,5,4,4,5,5,4,4,5,5,Phi3,"Phi3 covers more relevant measures and provides a more complete response."
-11,5,3,4,4,4,5,5,4,5,5,Gemma3,"Gemma3 provides a substantially more complete answer while retaining good clarity."
-12,5,5,5,5,5,5,5,5,5,5,Phi3,"Both are excellent; Phi3 receives the edge for focused interpretation and presentation."
-13,4,4,4,5,4,5,5,4,5,5,Gemma3,"Gemma3 presents a more complete and faithful summary of the relevant trend."
-14,4,4,3,4,4,5,5,5,5,5,Gemma3,"Gemma3 is clearer, more concise, and more complete in identifying the major factors."
-15,5,5,5,5,5,5,5,4,5,5,Phi3,"Both perform very well, but Phi3 is slightly more concise without losing important detail."
-16,5,5,4,5,5,5,5,4,5,5,Phi3,"Both are accurate; Phi3 presents the objectives in a slightly more structured manner."
-17,3,2,4,4,3,5,5,5,5,5,Gemma3,"Gemma3 provides important specific information that is missing from the Phi3 response."
-18,5,5,4,5,5,5,4,4,5,5,Phi3,"Phi3 gives a more complete explanation while maintaining strong readability."
-19,5,5,5,5,5,5,5,4,5,5,Phi3,"Both are strong, but Phi3 is more concise and directly connects the key components."
-20,4,3,4,4,4,5,5,5,5,5,Gemma3,"Gemma3 provides more concrete measures and better overall completeness."
-21,4,3,3,4,3,5,4,5,5,5,Gemma3,"Gemma3 is more focused and concise, while Phi3 extends beyond the strongest available evidence."
-22,5,5,4,5,5,5,2,5,5,4,Phi3,"Phi3 gives a substantially more complete response while staying relevant and readable."
-23,5,5,5,5,5,5,5,4,5,5,Phi3,"Both are accurate, but Phi3 communicates the key barriers more efficiently."
-24,5,5,4,5,5,5,5,5,5,5,Phi3,"Both are excellent; Phi3 adds useful context that strengthens the overall answer."
-25,5,4,4,5,5,5,5,4,5,5,Gemma3,"Gemma3 gives somewhat broader coverage and better completeness on the requested issue."
-26,4,4,4,4,4,5,5,5,5,5,Gemma3,"Gemma3 provides a more complete allocation framework with clearer presentation."
-27,5,5,5,5,5,5,5,4,5,5,Phi3,"Both are strong; Phi3 is more concise while clearly connecting investment and outcomes."
-28,5,5,4,5,5,5,2,5,5,4,Phi3,"Phi3 provides specific and useful recommendations, making it considerably more complete."
-29,4,5,4,5,5,5,5,4,5,5,Gemma3,"Gemma3 has a slight advantage in precision and faithfulness despite similar overall quality."
-30,5,5,4,5,5,5,2,5,5,4,Phi3,"Phi3 gives concrete recommendations, whereas Gemma3 provides substantially less complete coverage."
+# ============================================================
+# MANUAL MODEL EVALUATION RATINGS
+# ============================================================
+
+ratings = {
+    1:  [3,2,3,3,3, 5,5,5,5,5, "Gemma3", "Gemma3 gives clearer and more complete evidence; Phi3 is cautious but incomplete."],
+    2:  [3,3,4,4,4, 5,5,5,5,5, "Gemma3", "Gemma3 identifies the relevant information more accurately and directly."],
+    3:  [4,4,5,4,4, 4,4,3,4,4, "Phi3", "Both are comparable, but Phi3 is more concise and appropriately avoids overclaiming."],
+    4:  [5,5,5,5,5, 5,4,5,5,5, "Phi3", "Phi3 is slightly more complete while maintaining excellent clarity and faithfulness."],
+    5:  [4,5,4,5,5, 3,3,4,4,4, "Phi3", "Phi3 provides better context and a more useful interpretation of the available information."],
+    6:  [4,5,4,5,5, 5,4,5,5,5, "Phi3", "Both are strong, but Phi3 provides broader coverage of the important points."],
+    7:  [5,4,4,4,4, 4,4,3,4,4, "Phi3", "Phi3 is more cautious with limited evidence and avoids unsupported conclusions."],
+    8:  [4,4,5,5,5, 4,4,3,4,4, "Phi3", "Phi3 answers the question more directly and concisely while remaining readable."],
+    9:  [4,4,4,5,4, 5,2,5,5,4, "Phi3", "Phi3 gives more useful contextual information, whereas Gemma3 lacks completeness."],
+    10: [5,5,4,4,5, 5,4,4,5,5, "Phi3", "Phi3 covers more relevant measures and provides a more complete response."],
+
+    11: [5,3,4,4,4, 5,5,4,5,5, "Gemma3", "Gemma3 provides a substantially more complete answer while retaining good clarity."],
+    12: [5,5,5,5,5, 5,5,5,5,5, "Phi3", "Both are excellent; Phi3 receives the edge for focused interpretation and presentation."],
+    13: [4,4,4,5,4, 5,5,4,5,5, "Gemma3", "Gemma3 presents a more complete and faithful summary of the relevant trend."],
+    14: [4,4,3,4,4, 5,5,5,5,5, "Gemma3", "Gemma3 is clearer, more concise, and more complete in identifying the major factors."],
+    15: [5,5,5,5,5, 5,5,4,5,5, "Phi3", "Both perform very well, but Phi3 is slightly more concise without losing important detail."],
+    16: [5,5,4,5,5, 5,5,4,5,5, "Phi3", "Both are accurate; Phi3 presents the objectives in a slightly more structured manner."],
+    17: [3,2,4,4,3, 5,5,5,5,5, "Gemma3", "Gemma3 provides important specific information that is missing from the Phi3 response."],
+    18: [5,5,4,5,5, 5,4,4,5,5, "Phi3", "Phi3 gives a more complete explanation while maintaining strong readability."],
+    19: [5,5,5,5,5, 5,5,4,5,5, "Phi3", "Both are strong, but Phi3 is more concise and directly connects the key components."],
+    20: [4,3,4,4,4, 5,5,5,5,5, "Gemma3", "Gemma3 provides more concrete measures and better overall completeness."],
+
+    21: [4,3,3,4,3, 5,4,5,5,5, "Gemma3", "Gemma3 is more focused and concise, while Phi3 extends beyond the strongest available evidence."],
+    22: [5,5,4,5,5, 5,2,5,5,4, "Phi3", "Phi3 gives a substantially more complete response while staying relevant and readable."],
+    23: [5,5,5,5,5, 5,5,4,5,5, "Phi3", "Both are accurate, but Phi3 communicates the key barriers more efficiently."],
+    24: [5,5,4,5,5, 5,5,5,5,5, "Phi3", "Both are excellent; Phi3 adds useful context that strengthens the overall answer."],
+    25: [5,4,4,5,5, 5,5,4,5,5, "Gemma3", "Gemma3 gives somewhat broader coverage and better completeness on the requested issue."],
+    26: [4,4,4,4,4, 5,5,5,5,5, "Gemma3", "Gemma3 provides a more complete allocation framework with clearer presentation."],
+    27: [5,5,5,5,5, 5,5,4,5,5, "Phi3", "Both are strong; Phi3 is more concise while clearly connecting investment and outcomes."],
+    28: [5,5,4,5,5, 5,2,5,5,4, "Phi3", "Phi3 provides specific and useful recommendations, making it considerably more complete."],
+    29: [4,5,4,5,5, 5,5,4,5,5, "Gemma3", "Gemma3 has a slight advantage in precision and faithfulness despite similar overall quality."],
+    30: [5,5,4,5,5, 5,2,5,5,4, "Phi3", "Phi3 gives concrete recommendations, whereas Gemma3 provides substantially less complete coverage."]
+}
+
+
+rating_columns = [
+    "Phi3 Faithfulness (1-5)",
+    "Phi3 Completeness (1-5)",
+    "Phi3 Conciseness (1-5)",
+    "Phi3 Readability (1-5)",
+    "Phi3 Overall Score (1-5)",
+    "Gemma3 Faithfulness (1-5)",
+    "Gemma3 Completeness (1-5)",
+    "Gemma3 Conciseness (1-5)",
+    "Gemma3 Readability (1-5)",
+    "Gemma3 Overall Score (1-5)",
+    "Winner",
+    "Comments"
+]
+
+
+for index, row in df.iterrows():
+
+    question_id = int(row["Question ID"])
+
+    if question_id in ratings:
+
+        values = ratings[question_id]
+
+        for column, value in zip(rating_columns, values):
+            df.at[index, column] = value
 Sources Used:
 rhs_2020.csv",rhs_2020.csv,105.177,51,,,,,,,,,,,,
 2,workforce,Which states have the lowest number of doctors?,"Healthcare Workforce Profiles with Lowest Number of Doctors in Indian States as per rhs_2020.csv:
