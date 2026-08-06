@@ -101,3 +101,64 @@ def generate_responses(
             logger.info(f"Processed {idx + 1}/{len(test_data)} samples...")
             
     return results
+
+def generate_answers(
+    model: Any,
+    tokenizer: Any,
+    questions: List[str],
+    max_new_tokens: int = 512
+) -> List[Dict[str, Any]]:
+    """
+    Generates answers for a list of questions using deterministic decoding.
+    Tracks latency in milliseconds.
+    
+    Args:
+        model: The PEFT model.
+        tokenizer: The tokenizer.
+        questions: A list of question strings.
+        max_new_tokens: Maximum number of tokens to generate.
+        
+    Returns:
+        List of dictionaries containing 'question', 'answer', and 'latency_ms'.
+    """
+    results = []
+    
+    for idx, question in enumerate(questions):
+        messages = [{"role": "user", "content": question}]
+        
+        prompt_text = tokenizer.apply_chat_template(
+            messages,
+            tokenize=False,
+            add_generation_prompt=True
+        )
+        
+        inputs = tokenizer(prompt_text, return_tensors="pt").to(model.device)
+        
+        start_time = time.perf_counter()
+        
+        with torch.no_grad():
+            output_ids = model.generate(
+                **inputs,
+                max_new_tokens=max_new_tokens,
+                pad_token_id=tokenizer.eos_token_id,
+                do_sample=False,
+                temperature=0.0
+            )
+            
+        latency_ms = (time.perf_counter() - start_time) * 1000
+        
+        input_length = inputs.input_ids.shape[1]
+        generated_ids = output_ids[0][input_length:]
+        
+        answer_text = tokenizer.decode(generated_ids, skip_special_tokens=True).strip()
+        
+        results.append({
+            "question": question,
+            "answer": answer_text,
+            "latency_ms": latency_ms
+        })
+        
+        if (idx + 1) % 10 == 0:
+            logger.info(f"Processed {idx + 1}/{len(questions)} questions...")
+            
+    return results
