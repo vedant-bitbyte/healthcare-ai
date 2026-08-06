@@ -11,3 +11,5 @@ matplotlib
 python-dotenv
 
 pytest
+tqdm
+seaborn

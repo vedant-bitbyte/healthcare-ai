@@ -1,0 +1,5 @@
+2026-08-06 06:43:12,162 - convert_to_chat - INFO - Starting dataset conversion to chat format...
+2026-08-06 06:43:12,164 - dataset_converter.converter - INFO - Converting output\train_clean.jsonl -> data\chat\train_chat.jsonl
+2026-08-06 06:43:12,250 - dataset_converter.converter - INFO - Converting output\validation_clean.jsonl -> data\chat\validation_chat.jsonl
+2026-08-06 06:43:12,253 - dataset_converter.converter - INFO - Converting output\test_clean.jsonl -> data\chat\test_chat.jsonl
+2026-08-06 06:43:12,258 - convert_to_chat - INFO - Dataset conversion completed.

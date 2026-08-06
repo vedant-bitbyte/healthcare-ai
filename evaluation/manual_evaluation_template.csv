@@ -11,7 +11,7 @@ Supporting Evidence:
 - Puducherry: Specialists: 0
 
 Sources Used:
-rhs_2020.csv",rhs_2020.csv,105.177,51,,,,,,,,,,,,
+rhs_2020.csv",rhs_2020.csv,105.177,51,3,2,3,3,3,5,5,5,5,5,Gemma3,Gemma3 gives clearer and more complete evidence; Phi3 is cautious but incomplete.
 2,workforce,Which states have the lowest number of doctors?,"Healthcare Workforce Profiles with Lowest Number of Doctors in Indian States as per rhs_2020.csv:
 
 1. Manipur - 311 doctors
@@ -29,7 +29,7 @@ Supporting Evidence:
 - Manipur: 311 Doctors
 
 Sources Used:
-rhs_2020.csv",rhs_2020.csv,5.817,28,,,,,,,,,,,,
+rhs_2020.csv",rhs_2020.csv,5.817,28,3,3,4,4,4,5,5,5,5,5,Gemma3,Gemma3 identifies the relevant information more accurately and directly.
 3,workforce,Which states require healthcare workforce investment?,"The available healthcare documents do not contain sufficient evidence to answer this question directly as the context provided focuses on workforce profiles without explicit mention of needing further investments. However, based on specialist numbers alone and considering typical benchmarks for adequate staff levels in relation to population size or infrastructure capacity might suggest areas such as Himachal Pradesh with only 21 Specialists per CHC could potentially benefit from additional workforce planning strategies like the ones provided by the retrieved context.
 
 Answer: The available healthcare documents do not contain sufficient evidence to directly determine which states require investment in their healthcare workforce without further analysis of benchmarks and standards relative to population size or infrastructure capacity, as indicated within the given sources. Nevertheless, Himachal Pradesh could potentially be one area where additional specialist resources might contribute positively according to ratios provided in the data extracted from rhs_2020.csv.
@@ -49,7 +49,7 @@ Supporting Evidence:
 - Nagaland: 395 SubCenters, 130 PHCs, 21 CHCs; 120 Doctors, 9 Specialists, 132 Pharmacists, 143 Lab Technicians, 316 Nursing Staff.
 
 Sources Used:
-rhs_2020.csv",rhs_2020.csv,15.051,224,,,,,,,,,,,,
+rhs_2020.csv",rhs_2020.csv,15.051,224,4,4,5,4,4,4,4,3,4,4,Phi3,"Both are comparable, but Phi3 is more concise and appropriately avoids overclaiming."
 4,workforce,What workforce shortages are mentioned in healthcare reports?,"The available healthcare documents do not contain sufficient evidence to answer this question about specific or quantified ""workforce shortages."" The retrieved context only provides the total numbers of various roles, such as Doctors and Specialists, without comparing them against demand indicators. Therefore, it is impossible to determine if there are workforce shortages based solely on these documents.
 
 Sources Used: 
@@ -60,7 +60,7 @@ Supporting Evidence:
 The provided context details the number of doctors, specialists, pharmacists, lab technicians, and nursing staff for each state listed in rhs_2020.csv. It does not explicitly identify ""workforce shortages."" However, the data can be used for identifying specialist shortages and resource allocation based on infrastructure and workforce numbers.
 
 Sources Used:
-rhs_2020.csv",rhs_2020.csv,7.087,66,,,,,,,,,,,,
+rhs_2020.csv",rhs_2020.csv,7.087,66,5,5,5,5,5,5,4,5,5,5,Phi3,Phi3 is slightly more complete while maintaining excellent clarity and faithfulness
 5,workforce,How can India improve healthcare workforce availability?,"Given the context provided from 'Health Ministry Annual Reports', National Health Policy, NFHS reports, and retrieved CSV data for various states in India as of 2020, we observe disparities across different regions. States like Dadra & Nagar Haveli have a doctor-to-population ratio that appears relatively high given the small population size (doctors:subcenters at about 13:94). However, for densely populated states such as Uttar Pradesh and Maharashtra with overwhelmingly large populations of healthcare infrastructure but a moderate number of doctors relative to their populous regions.
 
 Suggestions for improvement based on the provided data might include: 
@@ -80,7 +80,7 @@ Supporting Evidence:
 - The purpose of the rhs_2020.csv data indicates it’s intended for healthcare workforce planning and resource allocation, suggesting a need for expansion based on demand.
 
 Sources Used:
-rhs_2020.csv",rhs_2020.csv,7.694,89,,,,,,,,,,,,
+rhs_2020.csv",rhs_2020.csv,7.694,89,4,5,4,5,5,3,3,4,4,4,Phi3,Phi3 provides better context and a more useful interpretation of the available information.
 6,maternal_health,What are the major maternal health challenges in India?,"Major Maternal Health Challenges in India:
 - High rates of complications during pregnancy, particularly with very young age at childbearing.
 - Increased risk for low birth weight and neonatal mortality associated with early maternity ages.
@@ -93,7 +93,7 @@ Supporting Evidence:
 *   ""Childbearing at a very young age is associated with an increased risk of complications during pregnancy and childbirth and higher rates of neonatal mortality."" (NFHS-5_National_Report.pdf) - Explains a contributing factor to the mentioned challenges.
 
 Sources Used:
-NFHS-5_National_Report.pdf",NFHS-5_National_Report.pdf,10.147,147,,,,,,,,,,,,
+NFHS-5_National_Report.pdf",NFHS-5_National_Report.pdf,10.147,147,4,5,4,5,5,5,4,5,5,5,Phi3,"Both are strong, but Phi3 provides broader coverage of the important points."
 7,maternal_health,What does NFHS-5 report about maternal health?,"I'm sorry, but based on my guideline I cannot invent or provide specific details not contained within the retrieved context regarding maternal health from NFHS-5. The available documents do not contain sufficient evidence to answer this question comprehensively about maternal health aspects specifically covered by NFHS-5 reports as of now (2023). Please refer directly to the official report or consult reliable sources for accurate information on that subject within NFHS-5 findings, especially focusing on pages discussing population and family welfare where such data is typically presented.",NFHS-5_National_Report.pdf,6.897,86,"Answer:
 NFHS-5 was designed to provide information on sexual behaviour; husband’s background and women’s work; HIV/AIDS knowledge, attitudes, and be haviour; and domestic violence only at the state level (in the state module), while indicators in the district module are reported at the district level. The National Family Health Survey (NFHS-5) was successfully completed in 707 districts (as on March 2017) drawn from all the 29 States and 7 Union Territories. The National Family Health Survey (NFHS-5) was designed to provide information on sexual behaviour; husband’s background and women’s work; HIV/AIDS knowledge, attitudes, and be haviour; and domestic violence only at the state level (in the state module), while indicators in the district module are reported at the district level.
 
@@ -107,7 +107,7 @@ The information collected through NFHS -5 is intended to assist policymakers and
 
 
 Sources Used:
-NFHS-5_National_Report.pdf",NFHS-5_National_Report.pdf,11.795,245,,,,,,,,,,,,
+NFHS-5_National_Report.pdf",NFHS-5_National_Report.pdf,11.795,245,5,4,4,4,4,4,4,3,4,4,Phi3,Phi3 is more cautious with limited evidence and avoids unsupported conclusions.
 8,maternal_health,What factors contribute to maternal mortality?,"Based on NFHS-5 data, some contributing factors include preterm delivery and low infant weight. Also, childbearing at a very young age can increase the risk of complications during pregnancy that may lead to maternal mortality (NFHS-5_National_Report.pdf).
 Supporting Evidence: 
 ""Mortality estimates are...based on female respondents who list all children born, including details like date of birth and survival status."" ""Birth intervals were found to have a direct impact; shorter gaps between pregnancies led to increased risk for both maternal deaths (NFHS-5_National_Report.pdf).""
@@ -122,10 +122,10 @@ Supporting Evidence:
  Childbearing at a very young age is associated with an increased risk of complications during pregnancy and childbirth and higher rates of neonatal mortality.
 
 Sources Used:
-NFHS-5_National_Report.pdf",NFHS-5_National_Report.pdf,8.922,178,,,,,,,,,,,,
+NFHS-5_National_Report.pdf",NFHS-5_National_Report.pdf,8.922,178,4,4,5,5,5,4,4,3,4,4,Phi3,Phi3 answers the question more directly and concisely while remaining readable.
 9,maternal_health,What improvements have been made in maternal healthcare?,"Based on the retrieved context, it is not explicitly mentioned what specific improvements have been made recently in maternal health care. However, we know that antenatal services are crucial for monitoring pregnancies and screening complications which can lead to improved outcomes for mothers and their infants if properly utilized (NFHS-5_National_Report.pdf).
 
-Sources Used: NFHS-5_National_Report.pdf",NFHS-5_National_Report.pdf,6.243,53,The available healthcare documents do not contain sufficient evidence to answer this question.,NFHS-5_National_Report.pdf,5.31,13,,,,,,,,,,,,
+Sources Used: NFHS-5_National_Report.pdf",NFHS-5_National_Report.pdf,6.243,53,The available healthcare documents do not contain sufficient evidence to answer this question.,NFHS-5_National_Report.pdf,5.31,13,4,4,4,5,4,5,2,5,5,4,Phi3,"Phi3 gives more useful contextual information, whereas Gemma3 lacks completeness."
 10,maternal_health,How can maternal mortality be reduced?,"MATERNAL MORTALITY CAN BE REDUCED BY INCREASING THE PERCENTAGE OF WOMEN WHO DELIVER IN HEALTH FACILITIES WITH SKILED MEDICAL ATTENDANCE. IMPROVING ACCESS TO AND UTILIZATION OF ANTENATAL CARE SERVICES CAN ALSO CONTRIBUTE TO REDUCING MATERNAL MORTALITY, AS THESE PROVIDE PREGNANT WOMEN WITH OPPORTUNITIES FOR COMPLICATION SCREENING AND LEGITIMATE GUIDANCE ON HEALTH BEFORE DURING AND AFTER BIRTH. FOLLOW-UP CARE POST DELIVERY IS CRUCIAL TO TREAT ISSUES THAT ARISEN FROM LABOR OR RESULTS OF THE DISEASE PROCESS, WHILE OFFERING INFORMATION ABOUT PARENTHOOD AND BASIC HYGIENE. EVEN WITHIN FAMILIES STRUGGLING WITH SOCIAL RESTRICTIONS REGARDING HEALTH CIRCUMSTANCES, PROVIDED THERE IS SUFFICIENT EDUCATION AND INFORMED DECISIONS MADE ABOUT MATERNAL CARE. SIGNIFICANT CONTRIBUTION ALSO COULD BE FROM REDUCING PREGNANCIES WITH SHORT PAIRS OF WOMEN, AS THE NFHS REPORT IDENTIFIES THIS INCREASED MATERNAL DEATH. IMPROVEMENTS TO HEARTH FACILITIES AND PROVIDE TRAINING FOR SKILLLED ATTENDANCE CAN ALSO AID LOW-COST COUNTRIES LIKE INDIA, WHERE SUPPLY OF BOTH PRENATAL CARE SERVICES AND POSTNAMENAL MEDICAL ADVICE IS COMPLICATED. SOURCES USED: NFHS-5_National_Report.pdf",NFHS-5_National_Report.pdf,16.906,160,"Answer:
 The perinatal mortality rate declines with an increase in the mother’s schooling and higher household wealth. Increasing institutional deliveries is an important factor in reducing maternal and neonatal mortality.
 
@@ -135,7 +135,7 @@ Supporting Evidence:
  Eighty-nine percent of live births in the five years before the survey were delivered in a health facility.
 
 Sources Used:
-NFHS-5_National_Report.pdf",NFHS-5_National_Report.pdf,6.948,85,,,,,,,,,,,,
+NFHS-5_National_Report.pdf",NFHS-5_National_Report.pdf,6.948,85,5,5,4,4,5,5,4,4,5,5,Phi3,Phi3 covers more relevant measures and provides a more complete response.
 11,disease_burden,What are the leading causes of disease burden in India?,"Leading Causes Answer: Ischaemic heart disease, stroke, diabetes. (Sources Used: [Source: 2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf])",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf,5.7,12,"Answer:
 The leading causes of disease burden in India, according to the retrieved documents, include:
 
@@ -157,7 +157,7 @@ Supporting Evidence:
 “In 2016, 55% of the total disease burden in India was caused by NCDs, 33% by CMNNDs, and 12% by injuries.” (Source: 2017\_India\_State\_Level\_Disease\_Burden\_Initiative\_Full\_Report.pdf)
 
 Sources Used:
-2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf,12.382,199,,,,,,,,,,,,
+2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf,12.382,199,5,3,4,4,4,5,5,4,5,5,Gemma3,Gemma3 provides a substantially more complete answer while retaining good clarity.
 12,disease_burden,What does DALY mean in the disease burden report?,"DALY stands for Disability-Adjusted Life Years; it is a measure that combines years of life lost due to premature mortality and years lived with disability. It represents both aspects into one metric, showing total health loss during an individual's lifetime or across a population. This allows comparative assessments essential for policy planning. (Sources Used: rhs_2020.csv; Health Ministry Annual Reports)",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf,6.276,59,"DALYs are years of healthy life lost to premature death and suffering. They are the sum of years of life lost and years lived with disability.
 
 Supporting Evidence:
@@ -171,7 +171,7 @@ Supporting Evidence:
 “Adding together YLLs and YLDs yields DALYs, a measure that portrays in one metric the total health loss a person experiences during their life.”
 
 Sources Used:
-2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf,9.502,131,,,,,,,,,,,,
+2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf,9.502,131,5,5,5,5,5,5,5,5,5,5,Phi3,Both are excellent; Phi3 receives the edge for focused interpretation and presentation.
 13,disease_burden,How has disease burden changed from 1990 to 2016?,"Disease Burden Change in India, 1990–2016: The report indicates that non-communicable diseases (NCDs) such as ischaemic heart disease and chronic obstructive pulmonary disease have significantly increased their share of the total DALY rate. In Andhra Pradesh specifically, NCDs accounted for 78% of disability-adjusted life years lost in comparison to just 29% globally, showcasing a marked shift from primarily infectious and associated diseases towards conditions such as diabetes (an increase by approximately 63.5%) and stroke which became the fifth leading cause within India itself for DALY rates by 2016. The overall disease burden rate in Assam was among the highest, while Kerala had one of the lowest rates nationally.
 
 Supporting Evidence: [Source data not explicitly provided; referenced as ""source""]",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf,11.18,118,"Answer:
@@ -183,7 +183,7 @@ Supporting Evidence:
 *   “Among the leading non-communicable diseases, the largest disease burden or DALY rate increase from 1990 to 2016 was observed for diabetes, at 80%, and ischaemic heart disease, at 34%.” [Source: 2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf]
 
 Sources Used:
-*   2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf,11.124,141,,,,,,,,,,,,
+*   2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf,11.124,141,4,4,4,5,4,5,5,4,5,5,Gemma3,Gemma3 presents a more complete and faithful summary of the relevant trend.
 14,disease_burden,Which diseases contribute most to India's health loss?,"The leading causes of disease burden contributing significantly to India's total DALY rates in 2016 were ischaemic heart disease, which caused a substantial increase from its initial rankings back then with an observed change rate at around 34%, diabetes also showed significant growth causing approximately the same percentage as ischaémic heart disease. Chronic obstructive pulmonary diseases and stroke followed closely in contributing to health loss, although specific percentages were not provided for these conditions within this context, it's implied from their ranking among leading causes that they significantly impacted DALY rates along with the previously mentioned chronic respiratory disorders.
 
 Supporting Evidence: 
@@ -196,7 +196,7 @@ Supporting Evidence:
 “Responsible for more than 5% of the total DALYs in 2016 included cardiovascular diseases; diarrhoea, lower respiratory infections, and other common infectious diseases; neonatal disorders; chronic respiratory diseases; diabetes, urogenital and endocrine diseases; mental and substance abuse disorders; unintentional injuries; and cancers.” (Source: [Source: 2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf])
 
 Sources Used:
-[Source: 2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf]",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf,10.056,125,,,,,,,,,,,,
+[Source: 2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf]",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf,10.056,125,4,4,3,4,4,5,5,5,5,5,Gemma3,"Gemma3 is clearer, more concise, and more complete in identifying the major factors."
 15,disease_burden,How do disease burdens vary across states?,"The available healthcare documents indicate that there are significant variations in disease burdens across Indian states. For instance, for non-communicable diseases (NCDs), the contribution to total DALY rates ranged from 48% to 75%, while infectious and associated diseases contributed between 14% to 43%. Injuries accounted for 9% to 14% across states. These variations are even more evident when examining the rate of occurrence of certain major conditions like diarrhoeal diseases, iron-deficiency anaemia, and tuberculosis within some states that have higher DALY rates than expected based on their development status alone. Notably, these burdens vary significantly between different regions such as Assam/Uttar Pradesh and Kerala.
 
 Sources Used:
@@ -209,7 +209,7 @@ Supporting Evidence:
 [Source: 2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf] – The DALY rate for ischaemic heart disease is 9-fold higher in some states compared to others, and the burden of diabetes is 4-fold higher in certain states than in others.
 
 Sources Used:
-2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf,12.375,231,,,,,,,,,,,,
+2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf,12.375,231,5,5,5,5,5,5,5,4,5,5,Phi3,"Both perform very well, but Phi3 is slightly more concise without losing important detail."
 16,policy,What are the objectives of National Health Policy 2017?,"The primary objectives as outlined in the context provided by the ""National_Health_Policy_2017.pdf"" document include improving health status through policy action across all sectors and expanding preventive, promotive, curative, palliative, and rehabilitative services via public sector programs with a focus on quality. Specific objectives related to child and adolescent health involve achieving neonatal mortality targets leading to ‘single digit’ stillbirth rates by enhancing home-based and facility-based sick newborn management alongside treatment for growth issues, birth defects, genetic diseases like fluorosis and SCA/TSD. The policy also seeks synergy between various departments (WCD, Education etc.) to integrate nutrition interventions effectively. Additionally, it aims at overhauling the universal immunization program by defining responsibilities among providers, insurers, clients, regulators and Government clearly for administering right-to-health components in an economic context where fiscal capacity is rising due to increased GDP growth rates as per NFHS Reports. The policy advocates for community participation alongside decentralizing decision making based on practical considerations while promoting dynamic technology that meets healthcare needs efficiently and effectively, ensuring alignment with public goals through the private sector's contribution in a manner consistent with document ""National_Health_Policy_2017.pdf"".",National_Health_Policy_2017.pdf,20.783,182,"Answer:
 The policy envisages as its goal the attainment of the highest possible level of health and well-being for all at all ages, through a preventive and promotive health care orientation in all developmental policies, and universal access to good quality health care services without anyone having to face financial hardship as a consequence. This would be achieved through increasing access, improving quality and lowering the cost of healthcare delivery.
 Improve health status through concerted policy action in all sectors and expand preventive, promotive, curative, palliative and rehabilitative services provided through the public health sector with focus on quality.
@@ -224,7 +224,7 @@ Improve health status through concerted policy action in all sectors and expand 
 Progressively achieve Universal Health Coverage”
 
 Sources Used:
-National_Health_Policy_2017.pdf",National_Health_Policy_2017.pdf,10.201,218,,,,,,,,,,,,
+National_Health_Policy_2017.pdf",National_Health_Policy_2017.pdf,10.201,218,5,5,4,5,5,5,5,4,5,5,Phi3,Both are accurate; Phi3 presents the objectives in a slightly more structured manner.
 17,policy,What health expenditure targets are proposed in National Health Policy 2017?,"The answer is not provided due to the rule requiring evidence from specific documents, which do not contain information about explicit financial targets. The policy does mention increasing public health spending and linking resource allocation with development indicators but without concrete percentages or goals mentioned in this context for clarity on target expenditures beyond these principles. 
 Sources Used: [National Health Policy_2017.pdf, National_Health_Policy_2017.pdf]",National_Health_Policy_2017.pdf; Ayushman_Bharat_Guidelines.pdf,8.682,62,"Answer:
 The National Health Policy, 2017 proposes several health expenditure targets. These include increasing public health expenditure to 2.5% of the GDP by 2025, increasing state sector health spending to > 8% of their budget by 2020, and decreasing the proportion of households facing catastrophic health expenditure from current levels by 25%, by 2025.
@@ -238,7 +238,7 @@ Supporting Evidence:
 “Decrease in proportion of households facing catastrophic health expenditure from the current levels by 25%, by 2025.”
 
 Sources Used:
-National_Health_Policy_2017.pdf",National_Health_Policy_2017.pdf; Ayushman_Bharat_Guidelines.pdf,9.258,117,,,,,,,,,,,,
+National_Health_Policy_2017.pdf",National_Health_Policy_2017.pdf; Ayushman_Bharat_Guidelines.pdf,9.258,117,3,2,4,4,3,5,5,5,5,5,Gemma3,Gemma3 provides important specific information that is missing from the Phi3 response.
 18,policy,What is Ayushman Bharat?,"Ayushman Bharat, also known as Comprehensive Primary Health Care through Health and Wellness Centers (HWCs), aims to provide financial protection for secondary and tertiala care with an emphasis on primary healthcare. This initiative was announced by the Government of India in February 2018, where they pledged to establish 15 lakh Health and Wellness Centers across all states as part of its components. Ayushman Bharat also integrates traditional Indian medicine systems with modern health care practices through active engagement with local practitioners within the community framework. The program's financing is based on national mission principles, ensuring accountability to people and promoting efficiency in resource utilization under a decentralized approach where states nominate Civil Society Organizations (CSOs) and NGOs for monitoring progress effectively. This effort aligns with India's commitment as per the Alma Ata Declaration of 1978, aiming to achieve Health For All in its nation by ensuring accessibility and affordability to healthcare services while also focusing on wellness promotion through activities like Yoga. (Supporting Evidence: Ayushman Bharat Guidelines; Annual Reports from the Ministry of Health & Family Welfare, Government of India.)",Ayushman_Bharat_Guidelines.pdf,27.185,180,"Ayushman Bharat aims to provide financial protection for secondary and tertiary care to about 40% of India’s households. Its success and affordability rests substantially on the effectiveness of provision of Comprehensive Primary Health Care through HWCs. Together, the two components of Ayushman Bharat will enable the realization of the aspiration for Universal Health Coverage.
 
 Supporting Evidence:
@@ -249,14 +249,14 @@ Health Care through HWCs. Together, the two components of Ayushman Bharat will e
 of the aspiration for Universal Health Coverage.
 
 Sources Used:
-[Source: Ayushman_Bharat_Guidelines.pdf]",Ayushman_Bharat_Guidelines.pdf,7.441,114,,,,,,,,,,,,
+[Source: Ayushman_Bharat_Guidelines.pdf]",Ayushman_Bharat_Guidelines.pdf,7.441,114,5,5,4,5,5,5,4,4,5,5,Phi3,Phi3 gives a more complete explanation while maintaining strong readability.
 19,policy,How does Ayushman Bharat improve healthcare access?,"The Ayushman Bharat program aims to provide financial protection for secondary and tertiary care, reaching about 40% of India's households. It plans to achieve universal health coverage by integrating Comprehensive Primary Health Care through the establishment of Health and Wellness Centers (HWCs). These centers are meant to offer services within a community setting while also providing financial relief for families in need, as outlined directly from Ayushman Bharat Guidelines. The program emphasizes preventive health measures like growth monitoring and counseling for early detection of childhood diseases at the primary level, which can help reduce disease burden over time (Supporting Evidence: [Source: Health Ministry Annual Reports]). Moreover, Ayushman Bharat intends to involve civil society organizations in tracking progress, effectiveness, and quality services delivery through monitoring arrangements. The initiative's comprehensive approach ensures accessibility by setting up physical centers near communities while incorporating behavioral change communication strategies for effective health promotion (Supporting Evidence: [Source: NFHS Reports]).",Ayushman_Bharat_Guidelines.pdf,9.659,153,"Ayushman Bharat aims to provide financial protection for secondary and tertiary care to about 40% of India’s households. Its success and affordability rests substantially on the effectiveness of provision of Comprehensive Primary Health Care through HWCs. Together, the two components of Ayushman Bharat will enable the realization of the aspiration for Universal Health Coverage. The launch of these Operational Guidelines for Comprehensive Primary Health Care through Health and Wellness Centers marks a major milestone in public health in India.
 
 Supporting Evidence:
 [Source: Ayushman_Bharat_Guidelines.pdf] “aims to provide financial protection for secondary and tertiary care to about 40% of India’s households.”, “[Source: Ayushman_Bharat_Guidelines.pdf] envisions “attainment of universal access to equitable, affordable and quality health care which is accountable and responsive to the needs of people”., “[Source: Ayushman_Bharat_Guidelines.pdf] transformation of existing Sub Health Centres and Primary Health Centres to deliver Comprehensive Primary Health Care”
 
 Sources Used:
-Ayushman_Bharat_Guidelines.pdf",Ayushman_Bharat_Guidelines.pdf,8.291,144,,,,,,,,,,,,
+Ayushman_Bharat_Guidelines.pdf",Ayushman_Bharat_Guidelines.pdf,8.291,144,5,5,5,5,5,5,5,4,5,5,Phi3,"Both are strong, but Phi3 is more concise and directly connects the key components."
 20,policy,What policy measures are recommended to strengthen healthcare infrastructure?,"Supporting Evidence: National Health Policy documents recommend developing leadership skills (Source: Strengthening human resource governance in public sector, p.12) and initiatives aimed at measurable improvements in quality of care which implicitly involves strengthening healthcare infrastructure to achieve this goal (Sources Used: National_Health_Policy_2017.pdf).",National_Health_Policy_2017.pdf; Ayushman_Bharat_Guidelines.pdf,8.401,42,"Answer:
 The policy recommends closing infrastructure and human resources/skill gaps in districts and blocks which have wider gaps for development of infrastructure and deployment of additional human resources. Additionally, the policy suggests State Directorates to be strengthened by HR policies.
 
@@ -265,13 +265,13 @@ Supporting Evidence:
 [Source: National_Health_Policy_2017.pdf] “The policy suggests State Directorates to be strengthened by HR policies, central to which is the issue that those from a public health management perspective”
 
 Sources Used:
-National_Health_Policy_2017.pdf",National_Health_Policy_2017.pdf; Ayushman_Bharat_Guidelines.pdf,7.8,123,,,,,,,,,,,,
+National_Health_Policy_2017.pdf",National_Health_Policy_2017.pdf; Ayushman_Bharat_Guidelines.pdf,7.8,123,4,3,4,4,4,5,5,5,5,5,Gemma3,Gemma3 provides more concrete measures and better overall completeness.
 21,infrastructure,What are the major healthcare infrastructure challenges in India?,"The available healthcare documents do not contain sufficient evidence to answer this question directly about specific current challenges or statistics regarding underdeveloped areas, as per my knowledge cutoff date. However, based on general understanding and contextual information provided earlier discussing infrastructure development within the Indian state of Kashmir and Haryana for upgradation programmes in Government Medical Colleges/Institutions that include construction projects such as Super Speciality Blocks / Trauma Care Centres etc., it can be implied that India is undertaking initiatives to strengthen tertiary health infrastructure which may suggest challenges related with the need for improved facilities. To obtain current and specific information on major healthcare infrastructure challenges in any state or country, one should refer to latest governmental reports such as Health Ministry Annual Reports that detail these concerns comprehensively along with recommendations provided by sources like National Health Policy 2017.
 
 Sources Used:
-- rhs_2020.csv (Healthcare workforce profile for All India Total)",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf; Health_Ministry_Annual_Report_25-26.pdf; National_Health_Policy_2017.pdf; Latest_Union_Budget_Health_Section.pdf; rhs_2020.csv,7.67,152,The available healthcare documents do not contain sufficient evidence to answer this question.,2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf; Health_Ministry_Annual_Report_25-26.pdf; National_Health_Policy_2017.pdf; Latest_Union_Budget_Health_Section.pdf; rhs_2020.csv,5.061,13,,,,,,,,,,,,
+- rhs_2020.csv (Healthcare workforce profile for All India Total)",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf; Health_Ministry_Annual_Report_25-26.pdf; National_Health_Policy_2017.pdf; Latest_Union_Budget_Health_Section.pdf; rhs_2020.csv,7.67,152,The available healthcare documents do not contain sufficient evidence to answer this question.,2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf; Health_Ministry_Annual_Report_25-26.pdf; National_Health_Policy_2017.pdf; Latest_Union_Budget_Health_Section.pdf; rhs_2020.csv,5.061,13,4,3,3,4,3,5,4,5,5,5,Gemma3,"Gemma3 is more focused and concise, while Phi3 extends beyond the strongest available evidence."
 22,infrastructure,How can healthcare infrastructure be improved in rural areas?,"Improving Health Infrastructure in Rural Areas requires the establishment and strengthening of comprehensive primary health care facilities, including Community-based Health Systems. According to Ayushman_Bharat_Guidelines (AHPM2019), these improvements are aimed at providing equitable access for all sections of society by transforming Sub-Health Centers/PHCs into AAMs which would provide CPHC services, as stated in the Health Ministry Annual Report 2023. The initiative particularly targets facilities without their own buildings and has dedicated efforts made under PM-ABHIM to fortify rural health infrastructure by enhancing SHCs/PHCs into AAMs (Health_Ministry_Annual_Report_25-26). Additionally, the National Health Policy 2017 emphasizes skill upgrades for service delivery and engaging with private sector services where necessary. The government has provided financial resources in addition to flexibility allowing states or UTs to address localized health challenges effectively (Health_Ministry_Annual_Report_25-26). There is also a noted increase of 67.6% in the availability of new facilities and infrastructure specifically for tribal areas between 2005 - 2tablet
-Source Used: Ayushman_Bharat_Guidelines, Health Ministry Annual Report 2023",Health_Ministry_Annual_Report_25-26.pdf; National_Health_Policy_2017.pdf; Ayushman_Bharat_Guidelines.pdf; NFHS-5_National_Report.pdf,9.638,158,The available healthcare documents do not contain sufficient evidence to answer this question.,Health_Ministry_Annual_Report_25-26.pdf; National_Health_Policy_2017.pdf; Ayushman_Bharat_Guidelines.pdf; NFHS-5_National_Report.pdf,5.124,13,,,,,,,,,,,,
+Source Used: Ayushman_Bharat_Guidelines, Health Ministry Annual Report 2023",Health_Ministry_Annual_Report_25-26.pdf; National_Health_Policy_2017.pdf; Ayushman_Bharat_Guidelines.pdf; NFHS-5_National_Report.pdf,9.638,158,The available healthcare documents do not contain sufficient evidence to answer this question.,Health_Ministry_Annual_Report_25-26.pdf; National_Health_Policy_2017.pdf; Ayushman_Bharat_Guidelines.pdf; NFHS-5_National_Report.pdf,5.124,13,5,5,4,5,5,5,2,5,5,4,Phi3,Phi3 gives a substantially more complete response while staying relevant and readable.
 23,infrastructure,What challenges exist in tribal healthcare infrastructure?,"Challenges in tribal healthcare infrastructure include geographical isolation, nutritional vulnerabilities, cultural barriers, and gaps within the health system. The National Health Policy advocates for situational measures tailored to their special needs by recommending outreach through Mobile Medical Units (MMUs).
 
 Sources Used: 
@@ -291,7 +291,7 @@ Sources Used:
 •	rhs_2020.csv, RHS - Rural Health Statistics
 •	Health_Ministry_Annual_Report_25-26.pdf
 •	NFHS Reports – Table 11.21 Problems in accessing health care
-•	National_Health_Policy_2017.pdf",Health_Ministry_Annual_Report_25-26.pdf; National_Health_Policy_2017.pdf; 2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf; Latest_Union_Budget_Health_Section.pdf; NFHS-5_National_Report.pdf,13.638,288,,,,,,,,,,,,
+•	National_Health_Policy_2017.pdf",Health_Ministry_Annual_Report_25-26.pdf; National_Health_Policy_2017.pdf; 2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf; Latest_Union_Budget_Health_Section.pdf; NFHS-5_National_Report.pdf,13.638,288,5,5,5,5,5,5,5,4,5,5,Phi3,"Both are accurate, but Phi3 communicates the key barriers more efficiently."
 24,infrastructure,What role does PM-ABHIM play in infrastructure development?,"Supporting Evidence:
 Under Pradhan Mantri Ayushman Bharat Health Infrastructure Mission (PM-ABHIM), a significant allocation of funds has been made towards strengthening healthcare facilities across various levels. Specifically, the establishment and enhancement of AIIMS hospitals through 150-bedded Critical Care Hospital Blocks are part of this mission's infrastructural development efforts (Source: Health_Ministry_Annual_Report_25-26.pdf).
 Sources Used:
@@ -303,7 +303,7 @@ Supporting Evidence:
 “Under Pradhan Mantri - Ayushman Bharat Health Infrastructure Mission (PM-ABHIM), setting up of 150-bedded Critical Care Hospital Block (CCHB) has been approved in each of 6 new AIIMS across the country, viz. AIIMS, Bhopal (Madhya Pradesh), AIIMS, Bhubaneswar (Odisha), AIIMS, Jodhpur (Rajasthan), AIIMS, Patna (Bihar), AIIMS, Rishikesh (Uttarakhand) and AIIMS, Raipur (Chhattisgarh) as well as Institute of Medical”
 
 Sources Used:
-[Source: Health_Ministry_Annual_Report_25-26.pdf]",Health_Ministry_Annual_Report_25-26.pdf; Latest_Union_Budget_Health_Section.pdf,8.615,109,,,,,,,,,,,,
+[Source: Health_Ministry_Annual_Report_25-26.pdf]",Health_Ministry_Annual_Report_25-26.pdf; Latest_Union_Budget_Health_Section.pdf,8.615,109,5,5,4,5,5,5,5,5,5,5,Phi3,Both are excellent; Phi3 adds useful context that strengthens the overall answer.
 25,infrastructure,What healthcare facilities have expanded in recent years?,"The Patient Care Services of PGIMER experienced significant expansion since its establishment as Nehru Hospital. The developments include the New OPD Block, Advanced Pediatric Centre, New Emergency Block, Advanced Eye Centre, Drug De-addiction Centre, and various Super Specialty Facilities like Cardiac and Trauma Centres among others that were introduced to strengthen patient care services (Source: Health_Ministry_Annual_Report_25-26.pdf).
 
 Additionally, the inauguration of state-of-the-art facilities such as a Virtual Clinical Anatomy Laboratory and a modern Burns OPD Block has further enhanced educational opportunities for medical students (Source: Health_Ministry_Annual_Report_25-26.pdf).
@@ -319,7 +319,7 @@ Supporting Evidence:
 [Source: Health_Ministry_Annual_Report_25-26.pdf] – Patient Care Services, [Source: Health_Ministry_Annual_Report_25-26.pdf] - Telangana, and Kerala, [Source: Health_Ministry_Annual_Report_25-26.pdf] - Inauguration of New Facilities, [Source: Health_Ministry_Annual_Report_25-26.pdf] - New Emergency Block (500 beds) and Super Specialty Block (with 430+125 beds), [Source: Health_Ministry_Annual_Report_25-26.pdf] - Inauguration of New Facilities
 
 Sources Used:
-Health_Ministry_Annual_Report_25-26.pdf",Health_Ministry_Annual_Report_25-26.pdf; Ayushman_Bharat_Guidelines.pdf,10.923,168,,,,,,,,,,,,
+Health_Ministry_Annual_Report_25-26.pdf",Health_Ministry_Annual_Report_25-26.pdf; Ayushman_Bharat_Guidelines.pdf,10.923,168,5,4,4,5,5,5,5,4,5,5,Gemma3,Gemma3 gives somewhat broader coverage and better completeness on the requested issue.
 26,budget,How should health budgets be allocated according to disease burden?,"Allocation recommendations are not provided in the retrieved context. The document suggests that state-level planning for public spending on health could benefit from understanding local disease profiles but does not specify exact allocation strategies based on those findings within this excerpt. Sources Used: rsht_2020.csv, Health Ministry Annual Reports, NFHS Reports, National Health Policy
 
 
@@ -333,7 +333,7 @@ state spending on health is a good investment in human capital. The magnitude of
 The findings in this report…could be used for planning of state health budgets, prioritisation of interventions relevant to each state…
 
 Sources Used:
-2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf,10.42,101,,,,,,,,,,,,
+2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf,10.42,101,4,4,4,4,4,5,5,5,5,5,Gemma3,Gemma3 provides a more complete allocation framework with clearer presentation.
 27,budget,Why is healthcare spending considered an investment in human capital?,"Ensuring Adequate Investment - According to ""National Health Policy_2017.pdf"", state expenditure on health signifies a valuable investment into the nation's human resources, as this spending correlates with improving public health outcomes and strengthening overall societal productivity by addressing disease burdens specific to each region through informed annual plans based on localized data (source: 2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf).
 
 Healthcare spending is considered an investment in human capital because it directly impacts the health and wellbeing of the population, which are fundamental components of a nation's economic strength and productivity (source: 2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf). By improving access to quality healthcare services, states can enhance their citizens’ physical condition, reduce the burden of disease on society and economy, promote a more capable workforce through better education (as noted in Human Resources for Health policy 2017), and ultimately lead to improved human capital.
@@ -350,13 +350,13 @@ Supporting Evidence:
 Improving human resources for health
 Suitable human resources for addressing the evolving disease burden
 Sources Used:
-rhs_2020.csv",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf; Fiscal_Health_Index_2026.pdf; National_Health_Policy_2017.pdf; Health_Ministry_Annual_Report_25-26.pdf,6.396,55,,,,,,,,,,,,
+rhs_2020.csv",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf; Fiscal_Health_Index_2026.pdf; National_Health_Policy_2017.pdf; Health_Ministry_Annual_Report_25-26.pdf,6.396,55,5,5,5,5,5,5,5,4,5,5,Phi3,Both are strong; Phi3 is more concise while clearly connecting investment and outcomes.
 28,budget,How can states improve health budget utilization?,"To enhance health budget utilization within a state's public expenditure framework as per National Health Policy 2017 guidelines and Ayushman Bharat initiatives, the following measures are recommended based on available documents. Firstly, states should prioritize allocating two-thirds of their total healthcare budget to primary health care services by ensuring that funds directly benefit high priority districts as per Indian Public Health Standard norms (Source: National_Health_Policy_2017.pdf). Secondly, there's an implication for states to increase overall sectoral spending in the state treasury above 8% of their budget by 2020 and reduce catastrophic health expenditures as well (Source: National_Health_Policy_2017.pdf).
 
 Sources Used:
 - Ayushman Bharat Guidelines, Document Date Unknown - Health Policy Source for the allocation strategy towards primary care funding and infrastructure reinforcement with a specific focus on high priority districts (Source retrieved from Ayushma_Bharati Gudelines.pdf).
 - National Health System Resource Centre Inputs: Strengthening of Primary Care systems through technical support as highlighted in both Ayushma Bharati Guidelines and NHMSRC inputs to assist states with planning, service delivery, monitoring, finance (Source retrieved from Ayushma_Bharati Gudelines.pdf).
-- National Health Policy 2017 Recommendations: Increase of State sector health spending in alignment with specified budgetary percentages and reduction strategies to prevent catastrophic expenses for households by the end of the policy timeline (Source retrieved from Ayushma_Bharati Gudelines.pdf).",Ayushman_Bharat_Guidelines.pdf; National_Health_Policy_2017.pdf,10.781,211,The available healthcare documents do not contain sufficient evidence to answer this question.,Ayushman_Bharat_Guidelines.pdf; National_Health_Policy_2017.pdf,4.994,13,,,,,,,,,,,,
+- National Health Policy 2017 Recommendations: Increase of State sector health spending in alignment with specified budgetary percentages and reduction strategies to prevent catastrophic expenses for households by the end of the policy timeline (Source retrieved from Ayushma_Bharati Gudelines.pdf).",Ayushman_Bharat_Guidelines.pdf; National_Health_Policy_2017.pdf,10.781,211,The available healthcare documents do not contain sufficient evidence to answer this question.,Ayushman_Bharat_Guidelines.pdf; National_Health_Policy_2017.pdf,4.994,13,5,5,4,5,5,5,2,5,5,4,Phi3,"Phi3 provides specific and useful recommendations, making it considerably more complete."
 29,budget,What factors should influence state health spending?,"State disease burden profiles, ageing population trends influencing higher numbers of older individuals with chronic conditions, and specific regional needs for interventions in line with the India State-Level Disease Burden Initiative findings. Additionally, states are encouraged to allocate more than 8% of their budget by 2025 as per National Health Policy recommendations, which indirectly suggests consideration should be given based on spending targets and disease burden profiling for resource mobilization towards health infrastructure and human resources aligned with the norms.
 Sources Used: 
 - rhs_2020.csv (general context about India's economic status)
@@ -370,11 +370,13 @@ Supporting Evidence:
 
 Sources Used:
 - 2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf
-- National_Health_Policy_2017.pdf",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf; Fiscal_Health_Index_2026.pdf; National_Health_Policy_2017.pdf,8.906,144,,,,,,,,,,,,
+- National_Health_Policy_2017.pdf",2017_India_State_Level_Disease_Burden_Initiative_Full_Report.pdf; Fiscal_Health_Index_2026.pdf; National_Health_Policy_2017.pdf,8.906,144,4,5,4,5,5,5,5,4,5,5,Gemma3,Gemma3 has a slight advantage in precision and faithfulness despite similar overall quality.
 30,budget,What recommendations exist for health financing in India?,"Supporting Evidence:
 The National Health Policy of 2017 recommends strengthening the delivery of Primary Health Care, through establishment of “Health and Wellness Centres” as the platform to deliver Comprehensive Primary Health Care. It also emphasizes a commitment of two-thirds of the health budget towards primary care initiatives (Source: Ayushman_Bharat_Guidelines.pdf).
 
 Furthermore, there is an indication for innovative public financing strategies and careful leveraging of procurement funds to generate required financial resources (Source: National Health Policy 2017 pdf). For making full use of research capacities in the nation, grant-in-aid mechanisms that provide extramural funding are proposed to be scaled up.
 
 Sources Used:
-Ayushman_Bharat_Guidelines.pdf, National Health Policy 2017 pdf",Ayushman_Bharat_Guidelines.pdf; National_Health_Policy_2017.pdf,7.588,106,The available healthcare documents do not contain sufficient evidence to answer this question.,Ayushman_Bharat_Guidelines.pdf; National_Health_Policy_2017.pdf,6.506,13,,,,,,,,,,,,
+Ayushman_Bharat_Guidelines.pdf, National Health Policy 2017 pdf",Ayushman_Bharat_Guidelines.pdf; National_Health_Policy_2017.pdf,7.588,106,The available healthcare documents do not contain sufficient evidence to answer this question.,Ayushman_Bharat_Guidelines.pdf; National_Health_Policy_2017.pdf,6.506,13,5,5,4,5,5,5,2,5,5,4,Phi3,"Phi3 gives concrete recommendations, whereas Gemma3 provides substantially less complete coverage"
+,,,,,,,,,,,,,,,,,,,,,,
+,Final count: Phi3 = 19/30 (63.3%) | Gemma3 = 11/30 (36.7%),,,,,,,,,,,,,,,,,,,,,
