@@ -1,0 +1,18 @@
+2026-08-06 06:33:35,515 - analyze_dataset - INFO - Starting dataset analysis...
+2026-08-06 06:33:35,515 - dataset_analysis.validator - INFO - Validating file: output\train_clean.jsonl
+2026-08-06 06:33:35,564 - dataset_analysis.validator - INFO - Validating file: output\validation_clean.jsonl
+2026-08-06 06:33:35,565 - dataset_analysis.validator - INFO - Validating file: output\test_clean.jsonl
+2026-08-06 06:33:35,601 - dataset_analysis.analyzer - INFO - Loaded 3822 records for split: train
+2026-08-06 06:33:35,604 - dataset_analysis.analyzer - INFO - Loaded 82 records for split: validation
+2026-08-06 06:33:35,606 - dataset_analysis.analyzer - INFO - Loaded 75 records for split: test
+2026-08-06 06:33:35,606 - dataset_analysis.analyzer - INFO - Computing dataset statistics...
+2026-08-06 06:33:35,706 - dataset_analysis.analyzer - INFO - Analysis complete.
+2026-08-06 06:33:35,708 - dataset_analysis.visualizer - INFO - Generating plots in plots...
+2026-08-06 06:33:37,210 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-08-06 06:33:37,213 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-08-06 06:33:38,281 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-08-06 06:33:38,287 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2026-08-06 06:33:38,805 - dataset_analysis.visualizer - INFO - All plots generated successfully.
+2026-08-06 06:33:38,806 - dataset_analysis.report_generator - INFO - Generating research report at reports\dataset_report.md...
+2026-08-06 06:33:38,810 - dataset_analysis.report_generator - INFO - Report generated successfully.
+2026-08-06 06:33:38,810 - analyze_dataset - INFO - Dataset analysis script completed.

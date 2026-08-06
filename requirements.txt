@@ -11,3 +11,8 @@ matplotlib
 python-dotenv
 
 pytest
+tqdm
+seaborn
+nltk
+rouge-score
+bert-score

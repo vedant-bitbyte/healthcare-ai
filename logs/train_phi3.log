@@ -1,0 +1,467 @@
+2026-08-06 07:17:24,278 - __main__ - INFO - Initializing Phi-3 Mini QLoRA training script...
+2026-08-06 07:17:24,278 - training.trainer - INFO - Initializing training pipeline...
+2026-08-06 07:17:24,279 - training.dataset - INFO - Loading dataset from data/chat/train_chat.jsonl
+2026-08-06 07:17:25,230 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py "HTTP/1.1 200 OK"
+2026-08-06 07:17:25,441 - training.dataset - INFO - Loaded 3822 samples. Validating...
+2026-08-06 07:17:25,547 - training.dataset - INFO - Validation complete: 3822 valid samples, 0 rejected.
+2026-08-06 07:17:25,549 - training.model - INFO - Loading tokenizer for microsoft/Phi-3-mini-4k-instruct
+2026-08-06 07:17:25,814 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:17:25,825 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:25,853 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:26,083 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/configuration_phi3.py "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:17:26,084 - huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-06 07:17:26,105 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/configuration_phi3.py "HTTP/1.1 200 OK"
+2026-08-06 07:17:26,123 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/configuration_phi3.py "HTTP/1.1 200 OK"
+2026-08-06 07:17:26,378 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:17:26,394 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:26,624 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:17:26,637 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:26,655 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:26,874 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:17:26,885 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:27,103 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-06 07:17:27,313 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-06 07:17:27,529 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:17:27,541 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:27,560 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:27,886 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer.model "HTTP/1.1 302 Found"
+2026-08-06 07:17:28,164 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/xet-read-token/f39ac1d28e925b323eae81227eaba4464caced4e "HTTP/1.1 200 OK"
+2026-08-06 07:17:30,155 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/added_tokens.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:17:30,166 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/added_tokens.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:30,187 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/added_tokens.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:30,425 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:17:30,438 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:30,461 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:30,683 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-08-06 07:17:30,940 - training.model - INFO - Loading model microsoft/Phi-3-mini-4k-instruct in 4-bit quantization
+2026-08-06 07:17:31,159 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:17:31,170 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:31,385 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-08-06 07:17:31,603 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/configuration_phi3.py "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:17:31,620 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/configuration_phi3.py "HTTP/1.1 200 OK"
+2026-08-06 07:17:31,861 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/modeling_phi3.py "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:17:31,875 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/modeling_phi3.py "HTTP/1.1 200 OK"
+2026-08-06 07:17:31,892 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/modeling_phi3.py "HTTP/1.1 200 OK"
+2026-08-06 07:17:31,940 - transformers_modules.microsoft.Phi_hyphen_3_hyphen_mini_hyphen_4k_hyphen_instruct.f39ac1d28e925b323eae81227eaba4464caced4e.modeling_phi3 - WARNING - `flash-attention` package not found, consider installing for better performance: No module named 'flash_attn'.
+2026-08-06 07:17:31,940 - transformers_modules.microsoft.Phi_hyphen_3_hyphen_mini_hyphen_4k_hyphen_instruct.f39ac1d28e925b323eae81227eaba4464caced4e.modeling_phi3 - WARNING - Current `flash-attention` does not support `window_size`. Either upgrade or use `attn_implementation='eager'`.
+2026-08-06 07:17:32,176 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:17:32,187 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:32,413 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-08-06 07:17:32,637 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/model.safetensors.index.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:17:32,649 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:32,668 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/model.safetensors.index.json "HTTP/1.1 200 OK"
+2026-08-06 07:17:32,888 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/revision/main "HTTP/1.1 200 OK"
+2026-08-06 07:17:33,113 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/f39ac1d28e925b323eae81227eaba4464caced4e/model-00001-of-00002.safetensors "HTTP/1.1 302 Found"
+2026-08-06 07:17:33,177 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/f39ac1d28e925b323eae81227eaba4464caced4e/model-00002-of-00002.safetensors "HTTP/1.1 302 Found"
+2026-08-06 07:22:57,906 - __main__ - INFO - Initializing Phi-3 Mini QLoRA training script...
+2026-08-06 07:22:57,906 - training.trainer - INFO - Initializing training pipeline...
+2026-08-06 07:22:57,907 - training.dataset - INFO - Loading dataset from data/chat/train_chat.jsonl
+2026-08-06 07:22:59,066 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py "HTTP/1.1 200 OK"
+2026-08-06 07:22:59,123 - training.dataset - INFO - Loaded 3822 samples. Validating...
+2026-08-06 07:22:59,127 - training.dataset - INFO - Validation complete: 3822 valid samples, 0 rejected.
+2026-08-06 07:22:59,127 - training.model - INFO - Loading tokenizer for microsoft/Phi-3-mini-4k-instruct
+2026-08-06 07:22:59,668 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:22:59,669 - huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-06 07:22:59,739 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 07:23:00,017 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/configuration_phi3.py "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:23:00,090 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/configuration_phi3.py "HTTP/1.1 200 OK"
+2026-08-06 07:23:00,369 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:23:00,441 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 07:23:00,712 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:23:00,777 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 07:23:01,017 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:23:01,060 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 07:23:01,273 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-06 07:23:01,512 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-06 07:23:01,703 - training.model - INFO - Loading model microsoft/Phi-3-mini-4k-instruct in 4-bit quantization
+2026-08-06 07:23:01,989 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:23:02,079 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 07:23:02,371 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/configuration_phi3.py "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:23:02,450 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/configuration_phi3.py "HTTP/1.1 200 OK"
+2026-08-06 07:23:02,753 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/modeling_phi3.py "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:23:02,833 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/modeling_phi3.py "HTTP/1.1 200 OK"
+2026-08-06 07:23:02,863 - transformers_modules.microsoft.Phi_hyphen_3_hyphen_mini_hyphen_4k_hyphen_instruct.f39ac1d28e925b323eae81227eaba4464caced4e.modeling_phi3 - WARNING - `flash-attention` package not found, consider installing for better performance: No module named 'flash_attn'.
+2026-08-06 07:23:02,863 - transformers_modules.microsoft.Phi_hyphen_3_hyphen_mini_hyphen_4k_hyphen_instruct.f39ac1d28e925b323eae81227eaba4464caced4e.modeling_phi3 - WARNING - Current `flash-attention` does not support `window_size`. Either upgrade or use `attn_implementation='eager'`.
+2026-08-06 07:23:03,149 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 07:23:03,223 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 07:23:03,524 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/revision/main "HTTP/1.1 200 OK"
+2026-08-06 07:23:03,755 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/f39ac1d28e925b323eae81227eaba4464caced4e/model-00001-of-00002.safetensors "HTTP/1.1 302 Found"
+2026-08-06 07:23:03,959 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/f39ac1d28e925b323eae81227eaba4464caced4e/model-00002-of-00002.safetensors "HTTP/1.1 302 Found"
+2026-08-06 08:17:06,247 - __main__ - INFO - Initializing Phi-3 Mini QLoRA training script...
+2026-08-06 08:17:06,248 - training.trainer - INFO - Initializing training pipeline...
+2026-08-06 08:17:06,249 - training.dataset - INFO - Loading dataset from data/chat/train_chat.jsonl
+2026-08-06 08:17:07,150 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py "HTTP/1.1 200 OK"
+2026-08-06 08:17:07,287 - training.dataset - INFO - Loaded 3822 samples. Validating...
+2026-08-06 08:17:07,293 - training.dataset - INFO - Validation complete: 3822 valid samples, 0 rejected.
+2026-08-06 08:17:07,294 - training.model - INFO - Loading tokenizer for microsoft/Phi-3-mini-4k-instruct
+2026-08-06 08:17:07,719 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:17:07,778 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:17:08,089 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/configuration_phi3.py "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:17:08,090 - huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-06 08:17:08,148 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/configuration_phi3.py "HTTP/1.1 200 OK"
+2026-08-06 08:17:08,453 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:17:08,513 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:17:08,813 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:17:08,871 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:17:09,166 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:17:09,228 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:17:09,519 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-06 08:17:09,816 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-06 08:17:10,060 - training.model - INFO - Loading model microsoft/Phi-3-mini-4k-instruct in 4-bit quantization
+2026-08-06 08:17:10,372 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:17:10,438 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:17:10,740 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/configuration_phi3.py "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:17:10,798 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/configuration_phi3.py "HTTP/1.1 200 OK"
+2026-08-06 08:17:11,114 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/modeling_phi3.py "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:17:11,174 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/modeling_phi3.py "HTTP/1.1 200 OK"
+2026-08-06 08:17:11,229 - transformers_modules.microsoft.Phi_hyphen_3_hyphen_mini_hyphen_4k_hyphen_instruct.f39ac1d28e925b323eae81227eaba4464caced4e.modeling_phi3 - WARNING - `flash-attention` package not found, consider installing for better performance: No module named 'flash_attn'.
+2026-08-06 08:17:11,229 - transformers_modules.microsoft.Phi_hyphen_3_hyphen_mini_hyphen_4k_hyphen_instruct.f39ac1d28e925b323eae81227eaba4464caced4e.modeling_phi3 - WARNING - Current `flash-attention` does not support `window_size`. Either upgrade or use `attn_implementation='eager'`.
+2026-08-06 08:17:11,530 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:17:11,588 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:17:11,639 - __main__ - ERROR - Training failed with error: 'type'
+Traceback (most recent call last):
+  File "C:\Users\asus\Desktop\healthcare-ai\scripts\train_phi3.py", line 25, in main
+    train(config)
+  File "C:\Users\asus\Desktop\healthcare-ai\training\trainer.py", line 35, in train
+    model, tokenizer = load_model_and_tokenizer(config)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\healthcare-ai\training\model.py", line 42, in load_model_and_tokenizer
+    model = AutoModelForCausalLM.from_pretrained(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\healthcare-ai\venv\Lib\site-packages\transformers\models\auto\auto_factory.py", line 389, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\healthcare-ai\venv\Lib\site-packages\transformers\modeling_utils.py", line 4276, in from_pretrained
+    model = cls(config, *model_args, **model_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\.cache\huggingface\modules\transformers_modules\microsoft\Phi_hyphen_3_hyphen_mini_hyphen_4k_hyphen_instruct\f39ac1d28e925b323eae81227eaba4464caced4e\modeling_phi3.py", line 1163, in __init__
+    self.model = Phi3Model(config)
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\.cache\huggingface\modules\transformers_modules\microsoft\Phi_hyphen_3_hyphen_mini_hyphen_4k_hyphen_instruct\f39ac1d28e925b323eae81227eaba4464caced4e\modeling_phi3.py", line 1004, in __init__
+    [Phi3DecoderLayer(config, layer_idx) for layer_idx in range(config.num_hidden_layers)]
+  File "C:\Users\asus\.cache\huggingface\modules\transformers_modules\microsoft\Phi_hyphen_3_hyphen_mini_hyphen_4k_hyphen_instruct\f39ac1d28e925b323eae81227eaba4464caced4e\modeling_phi3.py", line 1004, in <listcomp>
+    [Phi3DecoderLayer(config, layer_idx) for layer_idx in range(config.num_hidden_layers)]
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\.cache\huggingface\modules\transformers_modules\microsoft\Phi_hyphen_3_hyphen_mini_hyphen_4k_hyphen_instruct\f39ac1d28e925b323eae81227eaba4464caced4e\modeling_phi3.py", line 796, in __init__
+    self.self_attn = PHI3_ATTENTION_CLASSES[config._attn_implementation](config, layer_idx=layer_idx)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\.cache\huggingface\modules\transformers_modules\microsoft\Phi_hyphen_3_hyphen_mini_hyphen_4k_hyphen_instruct\f39ac1d28e925b323eae81227eaba4464caced4e\modeling_phi3.py", line 286, in __init__
+    self._init_rope()
+  File "C:\Users\asus\.cache\huggingface\modules\transformers_modules\microsoft\Phi_hyphen_3_hyphen_mini_hyphen_4k_hyphen_instruct\f39ac1d28e925b323eae81227eaba4464caced4e\modeling_phi3.py", line 296, in _init_rope
+    scaling_type = self.config.rope_scaling["type"]
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+KeyError: 'type'
+2026-08-06 08:18:40,159 - __main__ - INFO - Initializing Phi-3 Mini QLoRA training script...
+2026-08-06 08:18:40,159 - training.trainer - INFO - Initializing training pipeline...
+2026-08-06 08:18:40,160 - training.dataset - INFO - Loading dataset from data/chat/train_chat.jsonl
+2026-08-06 08:18:41,021 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py "HTTP/1.1 200 OK"
+2026-08-06 08:18:41,116 - training.dataset - INFO - Loaded 3822 samples. Validating...
+2026-08-06 08:18:41,120 - training.dataset - INFO - Validation complete: 3822 valid samples, 0 rejected.
+2026-08-06 08:18:41,120 - training.model - INFO - Loading tokenizer for microsoft/Phi-3-mini-4k-instruct
+2026-08-06 08:18:41,449 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:18:41,449 - huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-06 08:18:41,462 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:18:41,687 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:18:41,702 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:18:41,914 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:18:41,927 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:18:42,142 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-06 08:18:42,370 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-06 08:18:42,544 - training.model - INFO - Loading model microsoft/Phi-3-mini-4k-instruct in 4-bit quantization
+2026-08-06 08:18:42,756 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:18:42,768 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:18:42,996 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:18:43,009 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:18:57,811 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:18:57,834 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/generation_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:18:57,870 - training.model - INFO - Preparing model for k-bit training
+2026-08-06 08:18:58,146 - training.model - INFO - Attaching PEFT LoRA adapters
+2026-08-06 08:18:58,603 - training.model - INFO - Trainable params: 8,912,896 || All params: 2,018,053,120 || Trainable%: 0.4417%
+2026-08-06 08:18:58,607 - training.trainer - INFO - Setting up TrainingArguments
+2026-08-06 08:18:58,609 - __main__ - ERROR - Training failed with error: TrainingArguments.__init__() got an unexpected keyword argument 'evaluation_strategy'
+Traceback (most recent call last):
+  File "C:\Users\asus\Desktop\healthcare-ai\scripts\train_phi3.py", line 25, in main
+    train(config)
+  File "C:\Users\asus\Desktop\healthcare-ai\training\trainer.py", line 44, in train
+    training_args = TrainingArguments(
+                    ^^^^^^^^^^^^^^^^^^
+TypeError: TrainingArguments.__init__() got an unexpected keyword argument 'evaluation_strategy'
+2026-08-06 08:20:07,170 - __main__ - INFO - Initializing Phi-3 Mini QLoRA training script...
+2026-08-06 08:20:07,171 - training.trainer - INFO - Initializing training pipeline...
+2026-08-06 08:20:07,171 - training.dataset - INFO - Loading dataset from data/chat/train_chat.jsonl
+2026-08-06 08:20:08,197 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py "HTTP/1.1 200 OK"
+2026-08-06 08:20:08,301 - training.dataset - INFO - Loaded 3822 samples. Validating...
+2026-08-06 08:20:08,306 - training.dataset - INFO - Validation complete: 3822 valid samples, 0 rejected.
+2026-08-06 08:20:08,306 - training.model - INFO - Loading tokenizer for microsoft/Phi-3-mini-4k-instruct
+2026-08-06 08:20:08,571 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:20:08,572 - huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-06 08:20:08,584 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:20:08,818 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:20:08,843 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:20:09,124 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:20:09,138 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:20:09,361 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-06 08:20:09,601 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-06 08:20:09,829 - training.model - INFO - Loading model microsoft/Phi-3-mini-4k-instruct in 4-bit quantization
+2026-08-06 08:20:10,082 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:20:10,090 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:20:10,323 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:20:10,335 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:20:25,368 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:20:25,417 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/generation_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:20:25,432 - training.model - INFO - Preparing model for k-bit training
+2026-08-06 08:20:25,696 - training.model - INFO - Attaching PEFT LoRA adapters
+2026-08-06 08:20:25,997 - training.model - INFO - Trainable params: 8,912,896 || All params: 2,018,053,120 || Trainable%: 0.4417%
+2026-08-06 08:20:25,998 - training.trainer - INFO - Setting up TrainingArguments
+2026-08-06 08:20:26,111 - training.trainer - INFO - Initializing SFTTrainer
+2026-08-06 08:20:26,112 - __main__ - ERROR - Training failed with error: SFTTrainer.__init__() got an unexpected keyword argument 'max_seq_length'
+Traceback (most recent call last):
+  File "C:\Users\asus\Desktop\healthcare-ai\scripts\train_phi3.py", line 25, in main
+    train(config)
+  File "C:\Users\asus\Desktop\healthcare-ai\training\trainer.py", line 67, in train
+    trainer = SFTTrainer(
+              ^^^^^^^^^^^
+TypeError: SFTTrainer.__init__() got an unexpected keyword argument 'max_seq_length'
+2026-08-06 08:21:43,579 - __main__ - INFO - Initializing Phi-3 Mini QLoRA training script...
+2026-08-06 08:21:43,579 - training.trainer - INFO - Initializing training pipeline...
+2026-08-06 08:21:43,580 - training.dataset - INFO - Loading dataset from data/chat/train_chat.jsonl
+2026-08-06 08:21:44,672 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py "HTTP/1.1 200 OK"
+2026-08-06 08:21:44,763 - training.dataset - INFO - Loaded 3822 samples. Validating...
+2026-08-06 08:21:44,768 - training.dataset - INFO - Validation complete: 3822 valid samples, 0 rejected.
+2026-08-06 08:21:44,769 - training.model - INFO - Loading tokenizer for microsoft/Phi-3-mini-4k-instruct
+2026-08-06 08:21:45,483 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:21:45,485 - huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-06 08:21:45,710 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:21:45,987 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:21:46,211 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:21:46,471 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:21:46,699 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:21:46,958 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-06 08:21:47,228 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-06 08:21:47,461 - training.model - INFO - Loading model microsoft/Phi-3-mini-4k-instruct in 4-bit quantization
+2026-08-06 08:21:47,718 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:21:47,943 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:21:48,217 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:21:48,443 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:22:04,161 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:22:04,435 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/generation_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:22:04,454 - training.model - INFO - Preparing model for k-bit training
+2026-08-06 08:22:04,720 - training.model - INFO - Attaching PEFT LoRA adapters
+2026-08-06 08:22:05,065 - training.model - INFO - Trainable params: 8,912,896 || All params: 2,018,053,120 || Trainable%: 0.4417%
+2026-08-06 08:22:05,069 - training.trainer - INFO - Setting up SFTConfig
+2026-08-06 08:22:05,074 - __main__ - ERROR - Training failed with error: SFTConfig.__init__() got an unexpected keyword argument 'max_seq_length'
+Traceback (most recent call last):
+  File "C:\Users\asus\Desktop\healthcare-ai\scripts\train_phi3.py", line 25, in main
+    train(config)
+  File "C:\Users\asus\Desktop\healthcare-ai\training\trainer.py", line 43, in train
+    training_args = SFTConfig(
+                    ^^^^^^^^^^
+TypeError: SFTConfig.__init__() got an unexpected keyword argument 'max_seq_length'
+2026-08-06 08:25:05,779 - __main__ - INFO - Initializing Phi-3 Mini QLoRA training script...
+2026-08-06 08:25:05,779 - training.trainer - INFO - Initializing training pipeline...
+2026-08-06 08:25:05,779 - training.dataset - INFO - Loading dataset from data/chat/train_chat.jsonl
+2026-08-06 08:25:06,637 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py "HTTP/1.1 200 OK"
+2026-08-06 08:25:06,747 - training.dataset - INFO - Loaded 3822 samples. Validating...
+2026-08-06 08:25:06,760 - training.dataset - INFO - Validation complete: 3822 valid samples, 0 rejected.
+2026-08-06 08:25:06,760 - training.model - INFO - Loading tokenizer for microsoft/Phi-3-mini-4k-instruct
+2026-08-06 08:25:07,019 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:25:07,020 - huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-06 08:25:07,030 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:25:07,257 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:25:07,278 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:25:07,494 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:25:07,619 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:25:07,833 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-06 08:25:08,058 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-06 08:25:08,294 - training.model - INFO - Loading model microsoft/Phi-3-mini-4k-instruct in 4-bit quantization
+2026-08-06 08:25:08,499 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:25:08,513 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:25:08,740 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:25:08,755 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:25:22,933 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:25:22,948 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/generation_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:25:22,958 - training.model - INFO - Preparing model for k-bit training
+2026-08-06 08:25:23,202 - training.model - INFO - Attaching PEFT LoRA adapters
+2026-08-06 08:25:23,417 - training.model - INFO - Trainable params: 8,912,896 || All params: 2,018,053,120 || Trainable%: 0.4417%
+2026-08-06 08:25:23,418 - training.trainer - INFO - Setting up SFTConfig
+2026-08-06 08:25:23,525 - training.trainer - INFO - Initializing SFTTrainer
+2026-08-06 08:25:23,526 - __main__ - ERROR - Training failed with error: SFTTrainer.__init__() got an unexpected keyword argument 'tokenizer'
+Traceback (most recent call last):
+  File "C:\Users\asus\Desktop\healthcare-ai\scripts\train_phi3.py", line 25, in main
+    train(config)
+  File "C:\Users\asus\Desktop\healthcare-ai\training\trainer.py", line 67, in train
+    trainer = SFTTrainer(
+              ^^^^^^^^^^^
+TypeError: SFTTrainer.__init__() got an unexpected keyword argument 'tokenizer'
+2026-08-06 08:26:11,410 - __main__ - INFO - Initializing Phi-3 Mini QLoRA training script...
+2026-08-06 08:26:11,410 - training.trainer - INFO - Initializing training pipeline...
+2026-08-06 08:26:11,411 - training.dataset - INFO - Loading dataset from data/chat/train_chat.jsonl
+2026-08-06 08:26:12,334 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py "HTTP/1.1 200 OK"
+2026-08-06 08:26:12,397 - training.dataset - INFO - Loaded 3822 samples. Validating...
+2026-08-06 08:26:12,401 - training.dataset - INFO - Validation complete: 3822 valid samples, 0 rejected.
+2026-08-06 08:26:12,401 - training.model - INFO - Loading tokenizer for microsoft/Phi-3-mini-4k-instruct
+2026-08-06 08:26:12,746 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:26:12,747 - huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-06 08:26:12,758 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:26:12,990 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:26:13,003 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:26:13,222 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:26:13,232 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:26:13,443 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-06 08:26:13,654 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-06 08:26:13,834 - training.model - INFO - Loading model microsoft/Phi-3-mini-4k-instruct in 4-bit quantization
+2026-08-06 08:26:14,042 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:26:14,051 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:26:14,279 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:26:14,286 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:26:28,338 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:26:28,350 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/generation_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:26:28,362 - training.model - INFO - Preparing model for k-bit training
+2026-08-06 08:26:28,627 - training.model - INFO - Attaching PEFT LoRA adapters
+2026-08-06 08:26:28,815 - training.model - INFO - Trainable params: 8,912,896 || All params: 2,018,053,120 || Trainable%: 0.4417%
+2026-08-06 08:26:28,816 - training.trainer - INFO - Setting up SFTConfig
+2026-08-06 08:26:28,908 - training.trainer - INFO - Initializing SFTTrainer
+2026-08-06 08:26:33,087 - training.trainer - INFO - Starting training...
+2026-08-06 08:26:33,290 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/trl/SFTTrainer "HTTP/1.1 200 OK"
+2026-08-06 08:27:03,385 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:27:03,396 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:27:03,622 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:27:03,653 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:27:34,410 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:27:34,419 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:27:34,632 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:27:34,640 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:27:34,780 - training.trainer - INFO - Training completed. Saving final adapter to outputs...
+2026-08-06 08:27:35,028 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:27:35,037 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:27:35,247 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:27:35,257 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:27:35,330 - training.trainer - INFO - Final adapter saved successfully.
+2026-08-06 08:27:35,339 - __main__ - INFO - Training script completed successfully.
+2026-08-06 08:37:52,922 - __main__ - INFO - Initializing Phi-3 Mini QLoRA training script...
+2026-08-06 08:37:52,923 - training.trainer - INFO - Initializing training pipeline...
+2026-08-06 08:37:52,923 - training.dataset - INFO - Loading dataset from data/chat/train_chat.jsonl
+2026-08-06 08:37:53,822 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py "HTTP/1.1 200 OK"
+2026-08-06 08:37:53,900 - training.dataset - INFO - Loaded 3822 samples. Validating...
+2026-08-06 08:37:53,904 - training.dataset - INFO - Validation complete: 3822 valid samples, 0 rejected.
+2026-08-06 08:37:53,905 - training.dataset - INFO - Loading dataset from data/chat/validation_chat.jsonl
+2026-08-06 08:37:54,116 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py "HTTP/1.1 200 OK"
+2026-08-06 08:37:54,194 - training.dataset - INFO - Loaded 82 samples. Validating...
+2026-08-06 08:37:54,208 - training.dataset - INFO - Validation complete: 82 valid samples, 0 rejected.
+2026-08-06 08:37:54,208 - training.model - INFO - Loading tokenizer for microsoft/Phi-3-mini-4k-instruct
+2026-08-06 08:37:54,596 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:37:54,598 - huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-06 08:37:54,622 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:37:54,885 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:37:54,917 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:37:55,176 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:37:55,205 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:37:55,455 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-06 08:37:55,711 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-06 08:37:55,911 - training.model - INFO - Loading model microsoft/Phi-3-mini-4k-instruct in 4-bit quantization
+2026-08-06 08:37:56,154 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:37:56,195 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:37:56,465 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:37:56,492 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:38:11,130 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:38:11,159 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/generation_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:38:11,180 - training.model - INFO - Preparing model for k-bit training
+2026-08-06 08:38:11,302 - training.model - INFO - Attaching PEFT LoRA adapters
+2026-08-06 08:38:11,566 - training.model - INFO - Trainable params: 8,912,896 || All params: 2,018,053,120 || Trainable%: 0.4417%
+2026-08-06 08:38:11,566 - training.trainer - INFO - Setting up SFTConfig
+2026-08-06 08:38:11,663 - training.trainer - INFO - Initializing SFTTrainer
+2026-08-06 08:38:12,168 - __main__ - ERROR - Training failed with error: TensorBoardCallback requires tensorboard to be installed. Either update your PyTorch version or install tensorboardX.
+Traceback (most recent call last):
+  File "C:\Users\asus\Desktop\healthcare-ai\scripts\train_phi3.py", line 33, in main
+    train(config)
+  File "C:\Users\asus\Desktop\healthcare-ai\training\trainer.py", line 90, in train
+    trainer = SFTTrainer(
+              ^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\healthcare-ai\venv\Lib\site-packages\trl\trainer\sft_trainer.py", line 1336, in __init__
+    super().__init__(
+  File "C:\Users\asus\Desktop\healthcare-ai\venv\Lib\site-packages\trl\trainer\base_trainer.py", line 74, in __init__
+    super().__init__(*args, **kwargs)
+  File "C:\Users\asus\Desktop\healthcare-ai\venv\Lib\site-packages\transformers\trainer.py", line 569, in __init__
+    self.callback_handler = CallbackHandler(
+                            ^^^^^^^^^^^^^^^^
+  File "C:\Users\asus\Desktop\healthcare-ai\venv\Lib\site-packages\transformers\trainer_callback.py", line 435, in __init__
+    self.add_callback(cb)
+  File "C:\Users\asus\Desktop\healthcare-ai\venv\Lib\site-packages\transformers\trainer_callback.py", line 452, in add_callback
+    cb = callback() if isinstance(callback, type) else callback
+         ^^^^^^^^^^
+  File "C:\Users\asus\Desktop\healthcare-ai\venv\Lib\site-packages\transformers\integrations\integration_utils.py", line 591, in __init__
+    raise RuntimeError(
+RuntimeError: TensorBoardCallback requires tensorboard to be installed. Either update your PyTorch version or install tensorboardX.
+2026-08-06 08:40:06,920 - __main__ - INFO - Initializing Phi-3 Mini QLoRA training script...
+2026-08-06 08:40:06,920 - training.trainer - INFO - Initializing training pipeline...
+2026-08-06 08:40:06,920 - training.dataset - INFO - Loading dataset from data/chat/train_chat.jsonl
+2026-08-06 08:40:07,828 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py "HTTP/1.1 200 OK"
+2026-08-06 08:40:07,928 - training.dataset - INFO - Loaded 3822 samples. Validating...
+2026-08-06 08:40:07,932 - training.dataset - INFO - Validation complete: 3822 valid samples, 0 rejected.
+2026-08-06 08:40:07,932 - training.dataset - INFO - Loading dataset from data/chat/validation_chat.jsonl
+2026-08-06 08:40:08,146 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/json/json.py "HTTP/1.1 200 OK"
+2026-08-06 08:40:08,172 - training.dataset - INFO - Loaded 82 samples. Validating...
+2026-08-06 08:40:08,177 - training.dataset - INFO - Validation complete: 82 valid samples, 0 rejected.
+2026-08-06 08:40:08,177 - training.model - INFO - Loading tokenizer for microsoft/Phi-3-mini-4k-instruct
+2026-08-06 08:40:08,456 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:40:08,456 - huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-08-06 08:40:08,467 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:40:08,708 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:40:08,720 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:40:08,936 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:40:08,950 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:40:09,167 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-08-06 08:40:09,397 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/microsoft/Phi-3-mini-4k-instruct/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-08-06 08:40:09,607 - training.model - INFO - Loading model microsoft/Phi-3-mini-4k-instruct in 4-bit quantization
+2026-08-06 08:40:09,817 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:40:09,829 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:40:10,057 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:40:10,068 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:40:25,021 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:40:25,044 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/generation_config.json "HTTP/1.1 200 OK"
+2026-08-06 08:40:25,065 - training.model - INFO - Preparing model for k-bit training
+2026-08-06 08:40:25,189 - training.model - INFO - Attaching PEFT LoRA adapters
+2026-08-06 08:40:25,483 - training.model - INFO - Trainable params: 8,912,896 || All params: 2,018,053,120 || Trainable%: 0.4417%
+2026-08-06 08:40:25,484 - training.trainer - INFO - Setting up SFTConfig
+2026-08-06 08:40:25,590 - training.trainer - INFO - Initializing SFTTrainer
+2026-08-06 08:40:26,115 - training.trainer - INFO - Starting training...
+2026-08-06 08:40:26,655 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/telemetry/trl/SFTTrainer "HTTP/1.1 200 OK"
+2026-08-06 08:51:35,760 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:51:35,769 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 08:51:35,983 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 08:51:35,991 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:01:58,622 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:01:58,900 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:01:59,255 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:01:59,533 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:12:13,064 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:12:13,074 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:12:13,284 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:12:13,294 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:23:23,906 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:23:23,918 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:23:24,128 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:23:24,138 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:33:44,844 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:33:44,853 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:33:45,066 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:33:45,076 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:43:58,509 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:43:58,521 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:43:58,733 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:43:58,745 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:54:16,141 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:54:16,149 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:54:16,373 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:54:16,382 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:56:08,868 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:56:08,879 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:56:09,145 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:56:09,203 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:56:09,423 - training.trainer - INFO - Training completed. Saving final adapter to outputs...
+2026-08-06 09:56:09,713 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:56:09,733 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:56:09,948 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-08-06 09:56:09,960 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/microsoft/Phi-3-mini-4k-instruct/f39ac1d28e925b323eae81227eaba4464caced4e/config.json "HTTP/1.1 200 OK"
+2026-08-06 09:56:10,047 - training.trainer - INFO - Final adapter saved successfully.
+2026-08-06 09:56:10,070 - __main__ - INFO - Training script completed successfully.
