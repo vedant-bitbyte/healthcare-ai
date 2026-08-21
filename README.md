@@ -90,10 +90,46 @@ python scripts/evaluate_model.py --model "fine-tuned"
 ```
 
 --------------------------------------------------
-## 7. REPRODUCIBILITY
+## 7. DATA PREPARATION & TRAINING FROM SCRATCH
 --------------------------------------------------
-To reproduce the fine-tuning:
-1. Ensure your raw documents are in `data/raw/`.
-2. Run data processing scripts (e.g., `python scripts/generate_instruction_dataset.py`).
-3. Run training: `python scripts/train_phi3.py`.
-4. Outputs will be saved to `models/outputs/` which are automatically picked up by the Streamlit application.
+To reproduce the fine-tuning dataset, embeddings, and QLoRA training from scratch, execute the following pipeline in order:
+
+### 1. Document Ingestion
+Place your raw healthcare PDFs or CSVs into `data/raw/`. Then run the ingestion pipeline to extract and chunk the text into `data/processed/`.
+```bash
+python -m src.ingestion.pipeline
+```
+
+### 2. Build ChromaDB Vector Store
+Index the processed chunks into the local ChromaDB vector database so they can be retrieved by the RAG system.
+```bash
+python -c "from src.vectorstore.chromadb_store import VectorStore; VectorStore().index_chunks_directory()"
+```
+
+### 3. Generate Instruction Dataset
+Generate synthetic QA pairs from the chunked documents for fine-tuning.
+```bash
+python scripts/generate_instruction_dataset.py
+```
+*(This produces `instruction_train.jsonl`, `instruction_validation.jsonl`, and `instruction_test.jsonl` in the `output/` folder).*
+
+### 4. Rewrite and Clean Dataset (Optional but recommended)
+Use a local Ollama model to refine and clean the synthetically generated QA pairs.
+```bash
+python scripts/rewrite_dataset.py --input output/instruction_train.jsonl --output output/train_clean.jsonl
+python scripts/rewrite_dataset.py --input output/instruction_validation.jsonl --output output/validation_clean.jsonl
+python scripts/rewrite_dataset.py --input output/instruction_test.jsonl --output output/test_clean.jsonl
+```
+
+### 5. Convert to Chat Format
+Format the cleaned instructions into the conversational Phi-3 multi-turn chat template.
+```bash
+python scripts/convert_to_chat.py --train output/train_clean.jsonl --val output/validation_clean.jsonl --test output/test_clean.jsonl --outdir data/chat
+```
+
+### 6. Run QLoRA Fine-Tuning
+Start the PyTorch training loop to fine-tune the Phi-3 Mini model on your prepared healthcare dataset.
+```bash
+python scripts/train_phi3.py
+```
+*Note: The trained LoRA adapter weights will be saved directly to `models/outputs/` where the Streamlit application will automatically pick them up during startup!*
