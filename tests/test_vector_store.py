@@ -1,6 +1,6 @@
 import logging
 
-from src.embeddings.vector_store import VectorStore
+from src.vectorstore.chromadb_store import VectorStore
 
 logging.basicConfig(
     level=logging.INFO,

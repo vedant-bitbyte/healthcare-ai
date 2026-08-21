@@ -4,11 +4,11 @@ This report provides a comprehensive analysis of the generated instruction tunin
 
 ## Validation Summary
 
-- **Total Samples**: 3979
+- **Total Samples**: 13047
 - **Valid Samples**: 3979
-- **Rejected Samples**: 0
-- **Duplicates**: 0
-- **Missing Values**: 0
+- **Rejected Samples**: 7007
+- **Duplicates**: 1564
+- **Missing Values**: 497
 
 
 ## Dataset Statistics

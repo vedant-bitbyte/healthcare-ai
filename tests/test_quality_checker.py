@@ -1,5 +1,5 @@
 import pytest
-from src.quality_checker import evaluate_rewrite
+from src.dataset.quality_checker import evaluate_rewrite
 
 def test_too_short():
     original = "This is a long original answer. " * 10

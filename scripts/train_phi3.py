@@ -6,7 +6,7 @@ from pathlib import Path
 # Add project root to Python path so we can import 'training' package
 sys.path.append(str(Path(__file__).parent.parent))
 
-from training import TrainingConfig, setup_logging, train
+from src.model.training import TrainingConfig, setup_logging, train
 
 logger = logging.getLogger(__name__)
 

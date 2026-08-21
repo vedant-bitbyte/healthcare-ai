@@ -4,9 +4,12 @@ from __future__ import annotations
 
 import logging
 from typing import Any
+from pathlib import Path
 
 import ollama
 import torch
+
+from src.config.settings import HF_ADAPTER_PATH, HF_BASE_MODEL
 
 logger = logging.getLogger(__name__)
 
@@ -24,9 +27,9 @@ class HFSingleton:
     _tokenizer = None
 
     @classmethod
-    def load(cls, base_model_name: str = "microsoft/Phi-3-mini-4k-instruct", adapter_path: str = "outputs/"):
+    def load(cls, base_model_name: str = HF_BASE_MODEL, adapter_path: str = HF_ADAPTER_PATH):
         if cls._model is None:
-            from evaluation.inference import load_model_for_inference
+            from src.evaluation.inference import load_model_for_inference
             logger.info("Loading fine-tuned Hugging Face model from %s...", adapter_path)
             cls._model, cls._tokenizer = load_model_for_inference(base_model_name, adapter_path)
             logger.info("Fine-tuned model successfully loaded into memory.")
@@ -113,4 +116,4 @@ def generate_response(
 
     logger.info("Generated response (%d character(s))", len(answer))
 
-    return answer
+    return answer

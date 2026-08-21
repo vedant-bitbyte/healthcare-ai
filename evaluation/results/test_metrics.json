@@ -1,8 +1,0 @@
-{
-    "avg_bleu": 0.03953464232247007,
-    "avg_rouge_l": 0.18289940483035017,
-    "avg_exact_match": 0.0,
-    "avg_bert_score": 0.8541608826319377,
-    "avg_latency_sec": 13.251944983800252,
-    "avg_response_length": 130.81333333333333
-}

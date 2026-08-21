@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from ..embeddings.embedding_model import EmbeddingModelError, embed_text
-from ..embeddings.vector_store import VectorStore
+from src.vectorstore.chromadb_store import VectorStore
 from .query_router import QueryCategory, QueryRouter
 
 logger = logging.getLogger(__name__)

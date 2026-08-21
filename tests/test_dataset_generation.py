@@ -1,9 +1,9 @@
 import pytest
-from src.dataset_generation.chunk_filter import filter_chunks
-from src.dataset_generation.classifier import classify_chunk, classify_chunks
-from src.dataset_generation.instruction_generator import generate_instructions
-from src.dataset_generation.validator import validate_dataset
-from src.dataset_generation.deduplicator import deduplicate_dataset
+from src.dataset.chunk_filter import filter_chunks
+from src.dataset.classifier import classify_chunk, classify_chunks
+from src.dataset.instruction_generator import generate_instructions
+from src.dataset.generation_validator import validate_dataset
+from src.dataset.deduplicator import deduplicate_dataset
 
 def test_filter_chunks():
     chunks = [

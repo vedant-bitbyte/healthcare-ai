@@ -4,7 +4,7 @@ from pathlib import Path
 # Add src to python path so we can import dataset_generation
 sys.path.append(str(Path(__file__).parent.parent / "src"))
 
-from src.dataset_generation.pipeline import DatasetGenerationPipeline
+from src.dataset.pipeline import DatasetGenerationPipeline
 
 def main():
     base_dir = Path(__file__).parent.parent

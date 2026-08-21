@@ -1,12 +1,31 @@
-# Healthcare AI SLM
+# AI Sarthi
 
-AI-powered Healthcare Budget Recommendation & Insights System for Indian Healthcare Administration.
+AI Sarthi is an AI-powered Healthcare Assistant designed for the Indian healthcare system. It leverages a fine-tuned Small Language Model (SLM) backed by a Retrieval-Augmented Generation (RAG) pipeline to provide accurate, evidence-based answers to healthcare policy and medical queries.
 
-A research project focused on developing a domain-specific Small Language Model (SLM) for healthcare using fine-tuning (Phi-3 Mini / Gemma) and Retrieval-Augmented Generation (RAG).
+--------------------------------------------------
+## 1. PROJECT OVERVIEW
+--------------------------------------------------
 
----
+AI Sarthi aims to solve the challenge of navigating complex healthcare documentation. By combining the conversational capabilities of a fine-tuned Phi-3 Mini model with a robust RAG pipeline, it ensures that answers are not hallucinated but firmly grounded in verified healthcare reports and policies.
 
-## System Architecture
+- **Why RAG?** Medical and policy information changes rapidly and requires high factual accuracy. RAG anchors the language model's responses to retrieved facts.
+- **Why an SLM?** Small Language Models like Phi-3 Mini are efficient, can run on local hardware, and can be fine-tuned via QLoRA to understand specific domains deeply without the overhead of massive LLMs.
+- **What it does:** The chatbot processes user questions, retrieves the top relevant context from ingested documents, and generates a clean, cited response.
+
+--------------------------------------------------
+## 2. KEY FEATURES
+--------------------------------------------------
+
+- **Healthcare Document Ingestion:** Processes PDFs and CSVs into clean, searchable chunks.
+- **ChromaDB Vector Store:** Highly efficient local semantic retrieval using `BAAI/bge-small-en-v1.5` embeddings.
+- **Fine-Tuned SLM:** Customized PyTorch LoRA adapter for Phi-3 Mini, trained specifically on healthcare instructions.
+- **Citation-Backed Responses:** Automatically extracts and presents source metadata alongside generated answers.
+- **Streamlit Chatbot:** A professional, interactive, session-aware frontend UI.
+- **Evaluation Framework:** Built-in benchmarking suite to evaluate latency, generation quality, and retrieval accuracy.
+
+--------------------------------------------------
+## 3.1 SYSTEM ARCHITECTURE
+--------------------------------------------------
 
 <p align="center">
   <img src="assets/diagram/Main_Architecture.svg" alt="Main Architecture" width="1121">
@@ -14,132 +33,67 @@ A research project focused on developing a domain-specific Small Language Model 
 
 ---
 
-## Fine-Tuning Architecture
+### 3.2 Fine-Tuning Architecture
 
 <p align="center">
   <img src="assets/diagram/Fine-Tuning_Architecture.svg" alt="Fine-Tuning Architecture" width="191">
 </p>
 
----
 
-## Project Modules & Sub-Projects
+--------------------------------------------------
+## 4. PROJECT STRUCTURE
+--------------------------------------------------
+- `app/`: Streamlit web interface and chat service wrapper.
+- `src/`: Core logic (RAG pipeline, retrieval, embeddings, dataset prep, evaluation).
+- `scripts/`: Executable entry points (Training, Evaluation).
+- `data/`: Raw and processed datasets.
+- `models/`: Fine-tuned PyTorch checkpoints and LoRA adapters.
+- `vector_store/`: Persistent ChromaDB database.
+- `docs/`: In-depth architectural and development documentation.
 
-### 1. Document Ingestion & Vector Storage (`src/ingestion`, `src/embeddings`)
-- **PDF & CSV Loaders**: Automated parsing and cleaning of Indian healthcare budget documents and unstructured text.
-- **Text Chunking**: Configurable recursive chunking for semantic preservation.
-- **Vector Embeddings**: ChromaDB vector store integration with huggingface embeddings for fast similarity retrieval.
+--------------------------------------------------
+## 5. INSTALLATION
+--------------------------------------------------
 
-### 2. Retrieval-Augmented Generation (RAG) (`src/rag`, `src/retrieval`)
-- **Query Router**: Classifies incoming query intent (budget, policy, general) to route to specialized retrieval pipelines.
-- **Hybrid Retriever**: Retrieves context from vector store with relevance scoring and fallback handling.
-- **RAG Pipeline**: Dynamic prompt construction and LLM inference integration.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/vedant-bitbyte/healthcare-ai.git
+   cd healthcare-ai
+   ```
 
-### 3. Synthetic Dataset Generation & Cleaning (`src/dataset_generation`, `src/dataset_converter`)
-- **Instruction Generator**: Automated generation of domain-specific Q&A instruction pairs from raw chunks using LLM prompts.
-- **Deduplication & Quality Checker**: Filtering low-quality pairs, removing exact/near duplicate samples.
-- **Format Converter**: Utility scripts converting instruction datasets into Chat, Alpaca, and fine-tuning standard formats.
+2. **Set up the virtual environment:**
+   ```bash
+   python -m venv venv
+   source venv/Scripts/activate  # On Windows
+   ```
 
-### 4. Dataset Analysis & Reporting (`src/dataset_analysis`)
-- **Dataset Analyzer**: Computes token counts, message length distributions, and vocabulary statistics.
-- **Visualizer**: Generates plots for dataset length distribution and key metrics.
-- **Report Generator**: Exports HTML/Markdown analytical reports for dataset health inspection.
+3. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-### 5. SLM Fine-Tuning Engine (`training/`, `scripts/`)
-- **LoRA / QLoRA Fine-Tuning**: Parameter-efficient fine-tuning scripts optimized for Phi-3 Mini and Gemma models.
-- **Trainer Setup**: Custom dataset formatting, tokenization, dynamic batching, and checkpoint management.
+4. **Environment Variables:**
+   Copy `.env.example` to `.env` and adjust paths if necessary.
 
-### 6. Model Evaluation & Benchmarking (`evaluation/`, `evaluate_model.py`)
-- **Automated Batch Evaluator**: Runs RAG evaluation pipelines against predefined test question sets (`evaluation_questions.csv`).
-- **Model Comparison**: Benchmarks performance metrics across fine-tuned model variants (Phi-3 vs Gemma 3).
-- **Manual Evaluation Suite**: Generates scoring templates for human feedback and quality review.
+--------------------------------------------------
+## 6. RUNNING THE APPLICATION
+--------------------------------------------------
 
----
-
-## Core Features
-
-- 📄 **Healthcare Document Ingestion**: Ingest PDF/CSV budget and policy documents.
-- 🎯 **Domain-Specific RAG**: Retrieval-augmented system tailored for Indian healthcare context.
-- 🤖 **Fine-Tuned Healthcare SLM**: Lightweight models (Phi-3 Mini) fine-tuned on instruction datasets.
-- 📊 **Dataset Analytics**: Built-in analysis, validation, and visual reporting for datasets.
-- 🧪 **Comprehensive Evaluation**: Automated metric tracking and comparative model testing.
-
----
-
-## Tech Stack
-
-- **Languages & Frameworks**: Python, PyTorch, Hugging Face Transformers
-- **RAG & Vectors**: LangChain, ChromaDB
-- **Fine-Tuning**: PEFT (LoRA / QLoRA), TRL (SFTTrainer), BitsAndBytes
-- **Models**: Phi-3 Mini, Gemma 3
-- **Analysis & Visualization**: Pandas, Matplotlib, Seaborn
-
----
-
-## Project Structure
-
-```text
-healthcare-ai/
-├── assets/             # Architecture diagrams and static visual assets
-├── configs/            # Configuration files for training and RAG
-├── data/               # Raw and processed healthcare datasets
-├── evaluation/         # Evaluation scripts, question sets, and result metrics
-├── reports/            # Generated analysis and dataset reports
-├── scripts/            # Helper CLI scripts (dataset analysis, chat format conversion)
-├── src/                # Core source modules
-│   ├── dataset_analysis/   # Dataset stats, validation, and visual reports
-│   ├── dataset_converter/  # Dataset format converters (Alpaca/Chat)
-│   ├── dataset_generation/ # Instruction generation and cleaning pipeline
-│   ├── embeddings/         # Vector store and embedding generation
-│   ├── ingestion/          # Document loading (PDF/CSV) and text chunking
-│   ├── rag/                # RAG pipeline and prompt builders
-│   └── retrieval/          # Query router and document retriever
-├── training/           # Fine-tuning codebase (Phi-3 / Gemma, LoRA configs)
-├── evaluate_model.py   # Main evaluation runner script
-└── requirements.txt    # Python dependencies
-```
-
----
-
-## Getting Started
-
-### 1. Installation
-
+**Start the Streamlit Chatbot:**
 ```bash
-git clone https://github.com/vedant-bitbyte/healthcare-ai.git
-cd healthcare-ai
-pip install -r requirements.txt
+streamlit run app/streamlit_app.py
 ```
 
-### 2. Running Model Evaluation
-
+**Run Model Evaluation CLI:**
 ```bash
-python evaluate_model.py --model phi3:mini --questions evaluation/evaluation_questions.csv
+python scripts/evaluate_model.py --model "fine-tuned"
 ```
 
-### 3. Dataset Generation & Analysis
-
-```bash
-# Run dataset analysis
-python scripts/analyze_dataset.py
-
-# Convert dataset to chat format
-python scripts/convert_to_chat.py
-```
-
-### 4. Fine-Tuning the Model
-
-```bash
-python scripts/train_phi3.py
-```
-
----
-
-## Project Goal
-
-To build a lightweight, domain-specific Healthcare Small Language Model (SLM) capable of providing accurate healthcare insights, policy answers, and budget recommendations for Indian healthcare administration.
-
----
-
-## License
-
-This project is intended for academic and research purposes.
+--------------------------------------------------
+## 7. REPRODUCIBILITY
+--------------------------------------------------
+To reproduce the fine-tuning:
+1. Ensure your raw documents are in `data/raw/`.
+2. Run data processing scripts (e.g., `python scripts/generate_instruction_dataset.py`).
+3. Run training: `python scripts/train_phi3.py`.
+4. Outputs will be saved to `models/outputs/` which are automatically picked up by the Streamlit application.

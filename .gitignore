@@ -1,15 +1,36 @@
-.idea/
-venv/
-__pycache__/
-*.pyc
-
+# Environment variables
 .env
 
-.ipynb_checkpoints/
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
 
-.streamlit/
+# Virtual environments
+venv/
+.venv/
+env/
+virtualenv/
 
+# IDEs
+.idea/
+.vscode/
+
+# Logs and outputs
+logs/
+*.log
+
+# Databases
 vector_store/
+*.db
+*.sqlite3
 
-data/*.docx
-data/*.zip
+# Models and large files (Checkpoints)
+# WARNING: Safetensors and checkpoints are typically large and should be tracked with Git LFS if needed.
+models/checkpoints/*
+models/outputs/*
+
+# OS generated files
+.DS_Store
+Thumbs.db

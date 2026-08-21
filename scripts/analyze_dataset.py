@@ -6,7 +6,7 @@ import argparse
 # Add src to Python path
 sys.path.append(str(Path(__file__).parent.parent / "src"))
 
-from dataset_analysis import DatasetValidator, DatasetAnalyzer, DatasetVisualizer, ReportGenerator
+from src.dataset import DatasetValidator, DatasetAnalyzer, DatasetVisualizer, ReportGenerator
 
 def setup_logging():
     log_dir = Path("logs")
