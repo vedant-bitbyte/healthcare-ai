@@ -1,5 +1,0 @@
-Metadata-Version: 2.4
-Name: ai-sarthi
-Version: 1.0.0
-Summary: AI-powered healthcare assistant using a fine-tuned SLM and RAG
-Requires-Python: >=3.11.9
