@@ -35,7 +35,7 @@ AI Sarthi aims to solve the challenge of navigating complex healthcare documenta
 ---
 ### 3.2 System Architecture
 <p align="center">
-  <img src="assets/diagram/System_Architecture.png" alt="Main Architecture" width="200">
+  <img src="assets/diagram/System_Architecture.svg" alt="Main Architecture" width="200">
 </p>
 
 ---
