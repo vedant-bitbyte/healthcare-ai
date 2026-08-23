@@ -88,7 +88,7 @@ AI Sarthi aims to solve the challenge of navigating complex healthcare documenta
 
 **Start the Streamlit Chatbot:**
 ```bash
-streamlit run app/streamlit_app.py
+streamlit run app/app.py
 ```
 
 **Run Model Evaluation CLI:**
