@@ -24,16 +24,23 @@ AI Sarthi aims to solve the challenge of navigating complex healthcare documenta
 - **Evaluation Framework:** Built-in benchmarking suite to evaluate latency, generation quality, and retrieval accuracy.
 
 --------------------------------------------------
-## 3.1 SYSTEM ARCHITECTURE
+## 3 SYSTEM ARCHITECTURE
 --------------------------------------------------
 
+### 3.1 Proposed Architecture
 <p align="center">
-  <img src="assets/diagram/Main_Architecture.svg" alt="Main Architecture" width="1121">
+  <img src="assets/diagram/Proposed_Main_Architecture.svg" alt="Main Architecture" width="1121">
+</p>
+
+---
+### 3.2 System Architecture
+<p align="center">
+  <img src="assets/diagram/System_Architecture.png" alt="Main Architecture" width="200">
 </p>
 
 ---
 
-### 3.2 Fine-Tuning Architecture
+### 3.3 Fine-Tuning Architecture
 
 <p align="center">
   <img src="assets/diagram/Fine-Tuning_Architecture.svg" alt="Fine-Tuning Architecture" width="191">
