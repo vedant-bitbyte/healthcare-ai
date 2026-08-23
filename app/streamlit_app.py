@@ -1,17 +1,16 @@
 """Streamlit UI for AI Sarthi."""
 
 import logging
-import os
-import sys
+# import os
+# import sys
 import traceback
 
 # Add project root to PYTHONPATH so we can import app and src modules
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import streamlit as st
 
 from app.chat_service import get_document_count, get_rag_pipeline
-from src.rag.llm_client import DEFAULT_MODEL
 
 # Configure basic logging for the app
 logging.basicConfig(

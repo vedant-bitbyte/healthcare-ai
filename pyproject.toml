@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-sarthi"
+version = "1.0.0"
+description = "AI-powered healthcare assistant using a fine-tuned SLM and RAG"
+requires-python = ">=3.11.9"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*", "src*"]

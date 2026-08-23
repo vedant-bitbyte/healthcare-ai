@@ -79,7 +79,12 @@ AI Sarthi aims to solve the challenge of navigating complex healthcare documenta
    pip install -r requirements.txt
    ```
 
-4. **Environment Variables:**
+4. **Install AI Sarthi as an editable package**
+    ```bash
+    pip install -e .
+    ```
+   
+5. **Environment Variables:**
    Copy `.env.example` to `.env` and adjust paths if necessary.
 
 --------------------------------------------------
@@ -88,7 +93,7 @@ AI Sarthi aims to solve the challenge of navigating complex healthcare documenta
 
 **Start the Streamlit Chatbot:**
 ```bash
-streamlit run app/app.py
+streamlit run app/streamlit_app.py
 ```
 
 **Run Model Evaluation CLI:**

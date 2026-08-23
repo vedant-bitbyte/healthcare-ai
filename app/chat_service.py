@@ -1,7 +1,6 @@
 """Chat service to interface Streamlit with the existing RAG pipeline."""
 
 import logging
-from typing import Any
 
 from src.rag.rag_pipeline import RAGPipeline
 
